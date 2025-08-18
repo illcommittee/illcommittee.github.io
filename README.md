@@ -1,2 +1,2 @@
-#I suppose I'll make this the home page
-<a href="itis3135"> Link to somewhere else </a>
+This is just the README.md file; I don't have much to let you know right now.
+This isn't even remotely finished.
