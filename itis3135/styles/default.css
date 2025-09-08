@@ -1,0 +1,32 @@
+body{
+    background-color: slategrey;
+    text-align: center;
+    color: white;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+}
+
+h1{
+    color: lightblue;
+    font-size: 2em;
+}
+
+h2{
+    text-align: center;
+}
+
+a{
+    color: darkblue;
+    text-decoration: none;
+}
+
+a:hover{
+    color: lightblue;
+    text-decoration: underline;
+}
+
+main{
+    text-align: center;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
