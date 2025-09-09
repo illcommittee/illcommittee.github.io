@@ -49,20 +49,16 @@
 
     <!-- HTML Validation Link -->
     <a href="https://validator.w3.org/nu/?doc=https://illcommittee.github.io/itis3135/index.html" target="_blank">
-        <img style="border:0;width:88px;height:31px"
-          src="z_archives/html_validation.png" 
-          alt="Valid HTML5!" />
+        <img style="border:0;width:88px;height:31px" src="z_archives/html_validation.png" alt="Valid HTML5!">
     </a>
     <!-- CSS Validation Link -->
     <a href="https://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px"
-          src="https://jigsaw.w3.org/css-validator/images/vcss"
-          alt="Valid CSS!" />
+        <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!">
     </a>
   </footer>
+  <script>
+    document.getElementById("validation_link_html").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
+    document.getElementById("validation_link_css").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+  </script>
 </body>
-<script>
-  document.getElementById("validation_link_html").setAttribute("href","https:validator.w3.org/nu/?doc=" + location.href);
-  document.getElementById("validation_link_css").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
-</script>
 </html>
