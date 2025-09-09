@@ -21,37 +21,57 @@
   <main>
     <h2>Introduction</h2>
     <h2>Gustafson, Nathaniel D.</h2>
-    <img class="personal_photo" 
-        style="width:200px;height:auto;" 
-        src="images/me.png" 
-        alt="Picture of Nate Gustafson">
-    <figcaption>Photo of me at Biltmore Gardens</figcaption>
+
+    <figure>
+      <img class="personal_photo"
+           style="width:200px;height:auto;"
+           src="images/me.png"
+           alt="Picture of Nate Gustafson">
+      <figcaption>Photo of me at Biltmore Gardens</figcaption>
+    </figure>
     <ul>
-        <li>
-            <b>Personal Background:</b> I was born in Akron, Ohio, but my family quickly moved to Monroe, North Carolina, where I’ve lived since. 
-            I went to South Piedmont Community College to get an Associate's Transfer degree in Science, 
-            where I then transferred to UNCC to pursue a career and degree in Cyber Security, 
-            given how it’s been a passion of mine since high school.
-        </li>
-        <li>
-            <b>Professional Background:</b> Since 2021, I’ve worked at Chick-fil-A. The last 2 years, I’ve worked there as a Team Leader.
-        </li>
-        <li>
-            <b>Academic Background:</b> I’m a transfer student in Computer Science with a concentration in Cyber Security.
-        </li>
-        <li>
-            <b>Current Courses</b>
-            <ul>
-                <li><b>MATH 2164 - Matrices & Linear Algebra:</b> A required class for my major, I’d still take it though, given how it would count towards a Mathematics Minor in the event I ever wanted to go that route.</li>
-                <li><b>ITIS 3200 - Intro to Info Security & Privacy:</b></li> An introduction course for my selected concentration, this semester is one of the first semesters I’m taking a deep dive into the field of Cyber Security, so I’m pretty excited.
-                <li><b>ITSC 3146 - Intro to Operating Systems & Networking:</b></li> A mandatory course for my major, but also an exciting course for me as I’ve had previous experience and interest working with some of the programs that the course will be using.
-                <li><b>ITSC 3160 - Database Design and Implementation:</b></li> A course I’m interested in mainly for handling data, I heard I’d be using SQL and Python within this course, so I figure it would give me a good grasp of what kind of work and information the field of analytics has to offer.
-                <li><b>ITIS 3135 - Front-End-Web App Development:</b></li> A course I’m excited for, as I’ve had some experience with web development in the past, and I’m looking forward to learning more about it.
-            </ul>
-        </li>
-        <blockquote class="theo-quote">
-            “Believe you can, and you’re halfway there.” -Theodore Roosevelt
-        </blockquote>
+      <li>
+        <b>Personal Background:</b> I was born in Akron, Ohio, but my family quickly moved to Monroe, North Carolina, where I’ve lived since.
+        I went to South Piedmont Community College to get an Associate's Transfer degree in Science, where I then transferred to UNCC to
+        pursue a career and degree in Cyber Security, given how it’s been a passion of mine since high school.
+      </li>
+      <li>
+        <b>Professional Background:</b> Since 2021, I’ve worked at Chick-fil-A. The last 2 years, I’ve worked there as a Team Leader.
+      </li>
+      <li>
+        <b>Academic Background:</b> I’m a transfer student in Computer Science with a concentration in Cyber Security.
+      </li>
+      <li>
+        <b>Current Courses</b>
+        <ul>
+          <li><b>MATH 2164 - Matrices &amp; Linear Algebra:</b> A required class for my major; I’d still take it as it could count toward a Mathematics minor.</li>
+
+          <li>
+            <b>ITIS 3200 - Intro to Info Security &amp; Privacy:</b>
+            An introduction course for my concentration; this is one of the first semesters I’m taking a deep dive into Cyber Security, so I’m excited.
+          </li>
+
+          <li>
+            <b>ITSC 3146 - Intro to Operating Systems &amp; Networking:</b>
+            A mandatory course for my major and an exciting one given my prior interest in some of the tools we’ll use.
+          </li>
+
+          <li>
+            <b>ITSC 3160 - Database Design and Implementation:</b>
+            I’m interested in data work; using SQL and Python here should give me a solid grasp of analytics-related work.
+          </li>
+
+          <li>
+            <b>ITIS 3135 - Front-End Web App Development:</b>
+            I’ve done some web dev before and look forward to learning more.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    
+    <blockquote class="theo-quote">
+      “Believe you can, and you’re halfway there.” -Theodore Roosevelt
+    </blockquote>
     
   </main>
 
@@ -72,21 +92,27 @@
     <p>Page Designed by <a href="notroiousgecko.com">Notorious Gecko LLC.</a>&copy; 2025</p>
 
     <!-- HTML Validation Link -->
-    <a href="https://validator.w3.org/nu/?doc=https://illcommittee.github.io/itis3135/index.html" target="_blank">
-        <img style="border:0;width:88px;height:31px"
-          src="z_archives/html_validation.png" 
-          alt="Valid HTML5!" />
+    <a id="validation_link_html"
+       href="https://validator.w3.org/nu/?doc=https://illcommittee.github.io/itis3135/introduction.html" target="_blank">
+      <img style="border:0;width:88px;height:31px"
+           src="z_archives/html_validation.png"
+           alt="Valid HTML5!">
     </a>
+
     <!-- CSS Validation Link -->
-    <a href="https://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px"
-          src="https://jigsaw.w3.org/css-validator/images/vcss"
-          alt="Valid CSS!" />
+    <a id="validation_link_css"
+       href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+      <img style="border:0;width:88px;height:31px"
+           src="https://jigsaw.w3.org/css-validator/images/vcss"
+           alt="Valid CSS!">
     </a>
   </footer>
+  <script>
+    // Optional: update validator links to current page automatically
+    const h = document.getElementById("validation_link_html");
+    const c = document.getElementById("validation_link_css");
+    if (h) h.href = "https://validator.w3.org/nu/?doc=" + encodeURIComponent(location.href);
+    if (c) c.href = "https://jigsaw.w3.org/css-validator/validator?uri=" + encodeURIComponent(location.href);
+  </script>
 </body>
-<script>
-  document.getElementById("validation_link_html").setAttribute("href","https:validator.w3.org/nu/?doc=" + location.href);
-  document.getElementById("validation_link_css").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
-</script>
 </html>
