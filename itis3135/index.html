@@ -44,13 +44,16 @@
         <img style="border:0;width:88px;height:31px" src="z_archives/html_validation.png" alt="Valid HTML5!">
     </a>
     <!-- CSS Validation Link -->
-    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+    <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fillcommittee.github.io%2Fitis3135%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">
         <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!">
     </a>
   </footer>
   <script>
-    document.getElementById("validation_link_html").setAttribute("href","https:validator.w3.org/nu/?doc=" + location.href);
-    document.getElementById("validation_link_css").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
-</script>
+    // Optional: update validator links to current page automatically
+    const h = document.getElementById("validation_link_html");
+    const c = document.getElementById("validation_link_css");
+    if (h) h.href = "https://validator.w3.org/nu/?doc=" + encodeURIComponent(location.href);
+    if (c) c.href = "https://jigsaw.w3.org/css-validator/validator?uri=" + encodeURIComponent(location.href);
+  </script>
 </body>
 </html>
