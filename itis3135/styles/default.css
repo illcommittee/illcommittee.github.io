@@ -40,3 +40,9 @@ main{
     width: 60%;
     padding: 10px;
 }
+
+theo-quote{
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2em;
+}
