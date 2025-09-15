@@ -15,119 +15,125 @@
   -->
   <style>
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #153b50;
-      background: #ecebe4;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #153b50;
+        background: #ecebe4;
     }
 
     header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 20px;
-      background: #cc998d;
-      border-bottom: 4px solid #429ea6;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 20px;
+        background: #cc998d;
+        border-bottom: 4px solid #429ea6;
     }
     header img {
-      width: 56px;
-      height: 56px;
-      object-fit: cover;
-      border: 2px solid #429ea6;
-      border-radius: 8px;
-      background: #ffffff;
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+        border: 2px solid #429ea6;
+        border-radius: 8px;
+        background: #ffffff;
     }
     header h1 {
-      margin: 0;
-      font-size: 1.6rem;
-      color: #153b50;
+        margin: 0;
+        font-size: 1.6rem;
+        color: #153b50;
     }
 
     main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
     }
     h2 {
-      margin: 0 0 10px 0;
-      color: #153b50;
+        margin: 0 0 10px 0;
+        color: #153b50;
     }
     p {
-      line-height: 1.6;
-      margin: 0 0 14px 0;
+        line-height: 1.6;
+        margin: 0 0 14px 0;
     }
 
     .features {
-      list-style-type: square;
-      padding-left: 1.2rem;
-      margin: 10px 0 18px;
+        list-style-type: square;
+        padding-left: 1.2rem;
+        margin: 10px 0 18px;
     }
     .features li {
-      margin: 6px 0;
+        margin: 6px 0;
+    }
+
+    .features li::marker {
+        content: "◆  ";
+        color: #16f4d0;
+        font-weight: 700;
     }
 
     .contact {
-      background: #ffffff;
-      border-left: 4px solid #16f4d0;
-      padding: 12px 16px;
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        background: #ffffff;
+        border-left: 4px solid #16f4d0;
+        padding: 12px 16px;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     .contact address {
-      font-style: normal;
-      line-height: 1.6;
-      margin: 0;
+        font-style: normal;
+        line-height: 1.6;
+        margin: 0;
     }
 
     a {
-      color: #429ea6;
-      text-decoration: none;
+        color: #429ea6;
+        text-decoration: none;
     }
     a:hover {
-      text-decoration: underline;
+        text-decoration: underline;
     }
 
     footer {
-      text-align: center;
-      color: #153b50;
-      background: #ffffff;
-      border-top: 1px solid #cc998d;
-      padding: 16px;
-      margin-top: 16px;
+        text-align: center;
+        color: #153b50;
+        background: #ffffff;
+        border-top: 1px solid #cc998d;
+        padding: 16px;
+        margin-top: 16px;
     }
     .tagline {
-      color: #16f4d0;
-      font-weight: bold;
-      margin-bottom: 4px;
+        color: #16f4d0;
+        font-weight: bold;
+        margin-bottom: 4px;
     }
   </style>
 </head>
 <body>
   <header>
     <!-- Come back to change the logo later -->
-    <img src="images/Placeholder.png" alt="NDG LLC logo" width="56" height="56" />
+    <img src="images/placeholder.png" alt="NDG LLC logo" width="56" height="56" />
     <h1>NDG LLC</h1>
   </header>
 
   <main>
     <h2>NDG LLC Services</h2>
     <p>
-      NDG LLC builds clean, modern, and accessible websites. I focus on the
-      basics done right—semantic HTML, readable CSS, and performance that feels fast.
+        NDG LLC builds clean, modern, and accessible websites. I focus on the
+        basics done right—semantic HTML, readable CSS, and performance that feels fast.
     </p>
 
     <ul class="features">
-      <li>Responsive layouts that work on any device</li>
-      <li>Simple, accessible components (WCAG-aware)</li>
-      <li>Clean code you can actually read and maintain</li>
-      <li>Performance-minded from the start</li>
-      <li>Straightforward communication and timelines</li>
-      <li>Ongoing updates and care plans</li>
+        <li>Responsive layouts that work on any device</li>
+        <li>Simple, accessible components (WCAG-aware)</li>
+        <li>Clean code you can actually read and maintain</li>
+        <li>Performance-minded from the start</li>
+        <li>Straightforward communication and timelines</li>
+        <li>Ongoing updates and care plans</li>
     </ul>
 
     <p>
-      Have a project in mind? Tell me what you want to achieve and I’ll suggest the
-      simplest path to ship it.
+        Have a project in mind? Tell me what you want to achieve and I’ll suggest the
+        simplest path to ship it.
     </p>
 
     <div class="contact">
@@ -143,40 +149,40 @@
 <footer>
   <nav aria-label="Personal links">
     <ul style="list-style:none; padding:0; margin:0 0 10px; display:flex; flex-wrap:wrap; gap:.75rem;">
-      <li><a href="https://webpages.uncc.edu/ngustaf1/">Charlotte.edu</a></li>
-      <li><a href="https://github.com/illcommittee/illcommittee.github.io">GitHub</a></li>
-      <li><a href="https://illcommittee.github.io">GitHub.io</a></li>
-      <li><a href="https://www.freecodecamp.org/sepiksprime" target="_blank" rel="noopener">freeCodeCamp</a></li>
-      <li><a href="https://www.codecademy.com/profiles/NotoriousGecko">Codecademy</a></li>
-      <li><a href="https://www.linkedin.com/in/nathaniel-gustafson/">LinkedIn</a></li>
+        <li><a href="https://webpages.uncc.edu/ngustaf1/">Charlotte.edu</a></li>
+        <li><a href="https://github.com/illcommittee/illcommittee.github.io">GitHub</a></li>
+        <li><a href="https://illcommittee.github.io">GitHub.io</a></li>
+        <li><a href="https://www.freecodecamp.org/sepiksprime" target="_blank" rel="noopener">freeCodeCamp</a></li>
+        <li><a href="https://www.codecademy.com/profiles/NotoriousGecko">Codecademy</a></li>
+        <li><a href="https://www.linkedin.com/in/nathaniel-gustafson/">LinkedIn</a></li>
     </ul>
   </nav>
 
   <p>&copy; 2025 NDG LLC — Clean. Simple. Accessible.</p>
 
   <a id="validation_link_html"
-     href="https://validator.w3.org/nu/?doc="
-     target="_blank" rel="noopener">
+    href="https://validator.w3.org/nu/?doc="
+        target="_blank" rel="noopener">
     <img style="border:0;width:88px;height:31px"
-         src="images/html_validation.png"
-         alt="Validate HTML">
+        src="images/html_validation.png"
+        alt="Validate HTML">
   </a>
 
   <a id="validation_link_css"
-     href="https://jigsaw.w3.org/css-validator/validator?uri="
-     target="_blank" rel="noopener">
+    href="https://jigsaw.w3.org/css-validator/validator?uri="
+        target="_blank" rel="noopener">
     <img style="border:0;width:88px;height:31px"
-         src="https://jigsaw.w3.org/css-validator/images/vcss"
-         alt="Validate CSS">
+        src="https://jigsaw.w3.org/css-validator/images/vcss"
+        alt="Validate CSS">
   </a>
 </footer>
 
 <script>
-  const here = encodeURIComponent(location.href);
-  const htmlLink = document.getElementById('validation_link_html');
-  const cssLink  = document.getElementById('validation_link_css');
-  if (htmlLink) htmlLink.href = 'https://validator.w3.org/nu/?doc=' + here;
-  if (cssLink)  cssLink.href  = 'https://jigsaw.w3.org/css-validator/validator?uri=' + here;
+    const here = encodeURIComponent(location.href);
+    const htmlLink = document.getElementById('validation_link_html');
+    const cssLink  = document.getElementById('validation_link_css');
+    if (htmlLink) htmlLink.href = 'https://validator.w3.org/nu/?doc=' + here;
+    if (cssLink)  cssLink.href  = 'https://jigsaw.w3.org/css-validator/validator?uri=' + here;
 </script>
 </body>
 </html>
