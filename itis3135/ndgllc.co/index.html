@@ -140,9 +140,44 @@
     </div>
   </main>
 
-  <footer>
-    <div class="tagline">Clean. Simple. Accessible.</div>
-    <div>&copy; 2025 NDG LLC</div>
-  </footer>
+<footer>
+  <nav aria-label="Personal links">
+    <ul style="list-style:none; padding:0; margin:0 0 10px; display:flex; flex-wrap:wrap; gap:.75rem;">
+      <li><a href="https://webpages.uncc.edu/ngustaf1/">Charlotte.edu</a></li>
+      <li><a href="https://github.com/illcommittee/illcommittee.github.io">GitHub</a></li>
+      <li><a href="https://illcommittee.github.io">GitHub.io</a></li>
+      <li><a href="https://www.freecodecamp.org/sepiksprime" target="_blank" rel="noopener">freeCodeCamp</a></li>
+      <li><a href="https://www.codecademy.com/profiles/NotoriousGecko">Codecademy</a></li>
+      <li><a href="https://www.linkedin.com/in/nathaniel-gustafson/">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <p>&copy; 2025 NDG LLC — Clean. Simple. Accessible.</p>
+
+  <a id="validation_link_html"
+     href="https://validator.w3.org/nu/?doc="
+     target="_blank" rel="noopener">
+    <img style="border:0;width:88px;height:31px"
+         src="images/html_validation.png"
+         alt="Validate HTML">
+  </a>
+
+  <a id="validation_link_css"
+     href="https://jigsaw.w3.org/css-validator/validator?uri="
+     target="_blank" rel="noopener">
+    <img style="border:0;width:88px;height:31px"
+         src="https://jigsaw.w3.org/css-validator/images/vcss"
+         alt="Validate CSS">
+  </a>
+</footer>
+
+<script>
+  const here = encodeURIComponent(location.href);
+  const htmlLink = document.getElementById('validation_link_html');
+  const cssLink  = document.getElementById('validation_link_css');
+  if (htmlLink) htmlLink.href = 'https://validator.w3.org/nu/?doc=' + here;
+  if (cssLink)  cssLink.href  = 'https://jigsaw.w3.org/css-validator/validator?uri=' + here;
+</script>
 </body>
 </html>
+
