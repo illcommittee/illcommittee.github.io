@@ -51,7 +51,7 @@ header .brand img {
     border: 2px solid var(--sea);
 }
 
-header h1 {
+h1 {
     margin: 0;
     font-size: 1.8rem;
 }
