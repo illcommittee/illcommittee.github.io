@@ -9,16 +9,7 @@
 </head>
 <body>
   <header>
-    <h1>Nate Gustafson's Notorious Gecko || ITIS 3135</h1>
-      <nav>
-        <a href="./">Home</a>
-        ||
-        <a href="introduction.html">Introduction</a>
-        ||
-        <a href="contract.html">Contract</a>
-        ||
-        <a href="notoriousgecko/">Notorious Gecko</a>
-      </nav>
+    <div data-include="components/header.html"></div>
   </header>
   
   <main>
@@ -79,36 +70,7 @@
   </main>
 
   <footer>
-    <nav>
-      <a href="https://webpages.uncc.edu/ngustaf1/">Charlotte.edu</a>
-      ||
-      <a href="https://github.com/illcommittee/illcommittee.github.io">GitHub</a>
-      ||
-      <a href="https://illcommittee.github.io">Github.io</a>
-      ||
-      <a href="https://www.freecodecamp.org/sepiksprime" target="_blank" rel="noopener">My freeCodeCamp</a>
-      ||
-      <a href="https://www.codecademy.com/profiles/NotoriousGecko">Codecademy</a>
-      ||
-      <a href="https://www.linkedin.com/in/nathaniel-gustafson/">Linkedin</a>
-    </nav>
-    <p>Page Designed by <a href="ndgllc.co/">NDG LLC.</a>&copy; 2025</p>
-
-    <!-- HTML Validation Link -->
-    <a id="validation_link_html"
-       href="https://validator.w3.org/nu/?doc=https://illcommittee.github.io/itis3135/introduction.html" target="_blank">
-      <img style="border:0;width:88px;height:31px"
-           src="z_archives/html_validation.png"
-           alt="Valid HTML5!">
-    </a>
-
-    <!-- CSS Validation Link -->
-    <a id="validation_link_css"
-       href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fillcommittee.github.io%2Fitis3135%2Fintroduction.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">
-      <img style="border:0;width:88px;height:31px"
-           src="https://jigsaw.w3.org/css-validator/images/vcss"
-           alt="Valid CSS!">
-    </a>
+    <div data-include="components/footer.html"></div>
   </footer>
   <script>
     // Optional: update validator links to current page automatically
@@ -117,5 +79,6 @@
     if (h) h.href = "https://validator.w3.org/nu/?doc=" + encodeURIComponent(location.href);
     if (c) c.href = "https://jigsaw.w3.org/css-validator/validator?uri=" + encodeURIComponent(location.href);
   </script>
+  <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
