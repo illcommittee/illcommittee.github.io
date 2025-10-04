@@ -13,12 +13,21 @@
        verdigris: #429ea6
        prussian-blue: #153b50
   -->
+
   <style>
+    :root{
+        --color-linen: #ecebe4;
+        --color-tumbleweed: #cc998d;
+        --color-turquoise: #16f4d0;
+        --color-verdigris: #429ea6;
+        --color-prussian-blue: #153b50;
+    }
+
     body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        color: #153b50;
-        background: #ecebe4;
+        color: var(--color-prussian-blue);
+        background: var(--color-linen);
     }
 
     header {
@@ -26,21 +35,21 @@
         align-items: center;
         gap: 12px;
         padding: 20px;
-        background: #cc998d;
-        border-bottom: 4px solid #429ea6;
+        background: var(--color-tumbleweed);
+        border-bottom: 4px solid var(--color-verdigris);
     }
     header img {
         width: 56px;
         height: 56px;
         object-fit: cover;
-        border: 2px solid #429ea6;
+        border: 2px solid var(--color-verdigris);
         border-radius: 8px;
-        background: #ffffff;
+        background: var(--color-linen);
     }
     header h1 {
         margin: 0;
         font-size: 1.6rem;
-        color: #153b50;
+        color: var(--color-prussian-blue);
     }
 
     main {
@@ -50,7 +59,7 @@
     }
     h2 {
         margin: 0 0 10px 0;
-        color: #153b50;
+        color: var(--color-prussian-blue);
     }
     p {
         line-height: 1.6;
@@ -73,8 +82,8 @@
     }
 
     .contact {
-        background: #ffffff;
-        border-left: 4px solid #16f4d0;
+        background: var(--color-linen);
+        border-left: 4px solid var(--color-turquoise);
         padding: 12px 16px;
         border-radius: 6px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -86,7 +95,7 @@
     }
 
     a {
-        color: #429ea6;
+        color: var(--color-verdigris);
         text-decoration: none;
     }
     a:hover {
@@ -95,14 +104,14 @@
 
     footer {
         text-align: center;
-        color: #153b50;
-        background: #ffffff;
-        border-top: 1px solid #cc998d;
+        color: var(--color-prussian-blue);
+        background: var(--color-linen);
+        border-top: 1px solid var(--color-tumbleweed);
         padding: 16px;
         margin-top: 16px;
     }
     .tagline {
-        color: #16f4d0;
+        color: var(--color-turquoise);
         font-weight: bold;
         margin-bottom: 4px;
     }
@@ -121,7 +130,7 @@
     <h2>NDG LLC Services</h2>
     <p>
         NDG LLC builds clean, modern, and accessible websites. I focus on the
-        basics done right—semantic HTML, readable CSS, and performance that feels fast.
+        basics done right: semantic HTML, readable CSS, and performance that feels fast.
     </p>
 
     <ul class="features">
@@ -142,7 +151,7 @@
       <address>
         <strong>Contact NDG LLC</strong><br />
         Email: notoriousgeck@ndgllc.co<br />
-        Phone: (980) 313-2509<br />
+        Phone: (980) 313 - 2509<br />
         987 Innovation Dr, Charlotte, NC 28223
       </address>
     </div>
@@ -150,7 +159,7 @@
 
 <footer>
   <nav aria-label="Personal links">
-    <ul style="list-style:none; padding:0; margin:0 0 10px; display:flex; flex-wrap:wrap; gap:.75rem;">
+    <ul style="list-style:none; padding:0; margin:0 0 10px; display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
         <li><a href="https://webpages.uncc.edu/ngustaf1/">Charlotte.edu</a></li>
         <li><a href="https://github.com/illcommittee/illcommittee.github.io">GitHub</a></li>
         <li><a href="https://illcommittee.github.io">GitHub.io</a></li>
