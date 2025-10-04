@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Evaluations</title>
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/itis3135/styles/default.css">
+</head>
+<body>
+    <header>
+        <div data-include="/itis3135/components/header.html"></div>
+    </header>
+    
+    <main>
+        <h2>Website Evaluations</h2>
+        <h5>Evaluating the effectiveness of website design through CRAP principles</h5>
+        <section>
+            <h3><a href="https://gkc.ca/en" target="_blank" style="text-decoration: underline;">Good Example: GKC</a></h3>
+            <p>GKC is an incredibly well designed website, that follows modern CRAP principles with modern design, and an astonishing and smooth flow to their content.</p>
+            <ul>
+                <li><strong>Contrast:</strong> Excellent use of color contrast, text is easily readable and smooth on the eyes.</li>
+                <li><strong>Repetition:</strong> Also has a very consistent layout throughout the entire website, fonts, colors, even spacing are all well-defined.</li>
+                <li><strong>Alignment:</strong> A very unique grid layout that draws the eye to align text and items evenly.</li>
+                <li><strong>Proximity:</strong> Items are grouped in a logical pattern that follows the path of the eyes, and improves readability.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3><a href="https://www.art.yale.edu/" target="_blank" style="text-decoration: underline;">Bad Example: Yale School of Art</a></h3>
+            <p>While the Yale School of Art website has a visually creative design, it is incredibly disorganized and seemingly outdated. Navigation and readability are very compromised when viewing the site.</p>
+            <ul>
+                <li><strong>Contrast:</strong> A very busy background where the text, while easy to read, clashes harshly with the background.</li>
+                <li><strong>Repetition:</strong> Seemingly no repetition throughout the site, and elements are inconsistent from page to page.</li>
+                <li><strong>Alignment:</strong> Random elements don't really seem to align with anything, in fact, the whole web page feels skewed in one direction.</li>
+                <li><strong>Proximity:</strong> Overall, related elements seem separated and visually just random. At least the elements are close to each other?</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div data-include="/itis3135/components/footer.html"></div>
+    </footer>
+    
+    <script>
+    window.addEventListener('load', function () {
+      const htmlA = document.getElementById('validation_link_html');
+      const cssA  = document.getElementById('validation_link_css');
+      if (htmlA) htmlA.href = 'https://validator.w3.org/nu/?doc=' + encodeURIComponent(location.href);
+      if (cssA)  cssA.href  = 'https://jigsaw.w3.org/css-validator/validator?uri=' + encodeURIComponent(location.href);
+    });
+  </script>
+    <script src="/itis3135/scripts/HTMLInclude.min.js"></script>
+</body>
+</html>

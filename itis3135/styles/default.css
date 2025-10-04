@@ -1,27 +1,42 @@
+:root{
+  --color0: #111827; /* Charcoal (dark bg) */
+  --color1: #fde68a; /* Warm Sand (h1 on dark / highlight) */
+  --color2: #f59e0b; /* Amber (hover/accent) */
+  --color3: #e5e7eb; /* Light Gray (light text on dark / borders on light) */
+  --color4: #60a5fa; /* Link Blue */
+  --color5: #d8b4fe; /* Visited Purple */
+}
+
 body{
-    background-color: slategrey;
+    background-color: var(--color0);
     text-align: center;
     color: white;
-    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-family: 'Lato', 'Segoe UI', sans-serif;
 }
 
 h1{
-    color: lightblue;
+    color: var(--color1);
     font-size: 2em;
 }
 
 h2{
+    color: var(--color2);
+    font-size: 1.5rem;
     text-align: center;
 }
 
 a{
-    color: darkblue;
+    color: var(--color4);
     text-decoration: none;
 }
 
 a:hover{
-    color: lightblue;
+    color: var(--color2);
     text-decoration: underline;
+}
+
+a:visited{ 
+    color: var(--color5); 
 }
 
 .personal_photo{
@@ -31,14 +46,14 @@ a:hover{
     display: block;
     margin-left: auto;
     margin-right: auto;
-
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 main{
     text-align: left;
     margin: auto;
-    width: 60%;
-    padding: 10px;
+    width: 80%;
 }
 
 theo-quote{
