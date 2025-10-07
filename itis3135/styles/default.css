@@ -5,12 +5,13 @@
   --color3: #e5e7eb; /* Light Gray (light text on dark / borders on light) */
   --color4: #60a5fa; /* Link Blue */
   --color5: #d8b4fe; /* Visited Purple */
+  --color6: #f3f4f6; /* Off-White (body text on dark) */
 }
 
 body{
     background-color: var(--color0);
     text-align: center;
-    color: white;
+    color: var(--color6);
     font-family: 'Lato', 'Segoe UI', sans-serif;
 }
 
