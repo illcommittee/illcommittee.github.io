@@ -49,12 +49,26 @@ a:visited{
     margin-right: auto;
     margin-top: 16px;
     margin-bottom: 16px;
+    max-width: 200px;
 }
 
 main{
     text-align: left;
     margin: auto;
-    width: 80%;
+    width: 92%;
+    max-width: 12000px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+img, video{
+    max-width: 100%;
+    height: auto;
+}
+
+header nav a { 
+    display: inline-block; 
+    padding: .25rem .5rem; 
 }
 
 theo-quote{
@@ -67,4 +81,21 @@ theo-quote{
     border:0;
     width:88px;
     height:31px
+}
+
+@media screen and (min-width: 601px) and (max-width: 980px) {
+    main { width: 94%; max-width: 900px; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    header nav a { padding: .25rem .4rem; }
+}
+
+@media screen and (max-width: 600px) {
+    body { text-align: left; }         /* avoid fully centered paragraphs on phones */
+    main { width: 95%; max-width: 600px; }
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.2rem; }
+    header nav { display: flex; flex-wrap: wrap; gap: .25rem .5rem; }
+    header nav a { padding: .2rem .4rem; }
+    .personal_photo { max-width: 160px; }
 }
