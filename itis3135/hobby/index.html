@@ -3,11 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITIS Midterm - Hobby Website</title>
+    <title>Camping Hobby Website</title>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <!--Input styles here-->
     <style>
-        
+        :root{
+            --color1: #ea8c55ff; /*Persian Orange*/
+            --color2: #c75146ff; /*Jasper*/
+            --color3: #ad2e24ff; /*Fire Brick*/
+            --color4: #81171bff; /*Falu Red*/
+            --color5: #540804ff; /*Rosewood*/
+            --color6: #f8f5f2ff; /*Paper*/
+            --color7: #5e0b0bff; /*Dark Red*/
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: var(--color5);
+            color: var(--color6);
+            font-family: 'Libre Franklin', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 1100px;
+            padding: 1rem;
+        }
+        header, main, footer{
+            margin-block: 1rem;
+        }
+        h1,h2,h3{
+            font-family: 'Bree Serif', serif;
+            color: var(--color1);
+            margin: 0 0 .4rem 0;
+        }
+        header{
+            border-bottom: 2px solid var(--color2);
+            padding-bottom: .5rem;
+        }
+        nav{
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-top: .5rem;
+        }
+        nav a{
+            color:var(--color1);
+            text-decoration: none;
+            border: 1px solid var(--color2);
+            border-radius: 9px;
+            padding: .45rem .85rem;
+            background: var(--color4);
+            transition: .2s;
+        }
+        nav a:hover, nav a:focus{
+            color:var(--color3);
+            background: var(--color-1);
+            border-color: var(--color3);
+            outline: none;
+        }
+        main section{
+            display: none;
+        }
+        main section.active{
+            display: block;
+            padding: 1rem;
+            border: 1px solid var(--color2);
+            border-radius: 12px;
+            background: var(--color7);
+            margin-bottom: 1.3rem;
+        }
+        footer{
+            border-top: 2px solid var(--color2);
+
+        }
+
     </style>
 </head>
 
@@ -15,23 +86,36 @@
     <header>
         <h1>Lobby</h1>
         <nav aria-label="Sections">
-            <a href="#who" data-target="who" aria-current="page">Who</a>
+            <span class="divider">✦</span>
+            <a href="#who" data-target="who">Who</a>
+            <span class="divider">✦</span>
             <a href="#what" data-target="what" aria-current="page">What</a>
-            <a href="#when" data-target="when" aria-current="page">When</a>
-            <a href="#where" data-target="where" aria-current="page">Where</a>
-            <a href="#how" data-target="how" aria-current="page">How</a>
-            <a href="#why" data-target="why" aria-current="page">Why</a>
-            <a href="#ai" data-target="ai" aria-current="page">AI Prompts</a>
+            <span class="divider">✦</span>
+            <a href="#when" data-target="when">When</a>
+            <span class="divider">✦</span>
+            <a href="#where" data-target="where">Where</a>
+            <span class="divider">✦</span>
+            <a href="#how" data-target="how">How</a>
+            <span class="divider">✦</span>
+            <a href="#why" data-target="why">Why</a>
+            <span class="divider">✦</span>
+            <a href="#ai" data-target="ai">AI Prompts</a>
+            <span class="divider">✦</span>
         </nav>
     </header>
 
     <main>
         <!--Who-->
-        <section id="who" class="active">
+        <section id="who">
             <h2>Who (About / About Me / Who We Are)</h2>
             <article><p>Introduce yourself or your group and why this hobby matters to you.</p></article>
             <figure>
-                <img src="images/placeholder.png" alt="Placeholder Image" width="50%" height="50%">
+                <img 
+                    src="images/placeholder.png" 
+                    alt="Placeholder Image" 
+                    width="50%" 
+                    height="50%"
+                />
                 <figcaption>Figure 1: A caption of the image being shown</figcaption>
                 <p class="ai-note">Prompt (if AI image): "Describe your prompt here."</p>
             </figure>
@@ -51,7 +135,12 @@
                 <p>Define the hobby in 2-3 sentences, including core terms, tools, or goals.</p>
             </article>
             <figure>
-                <img src="images/placeholder.png" alt="Placeholder Image" width="50%" height="50%">
+                <img 
+                    src="images/placeholder.png" 
+                    alt="Placeholder Image" 
+                    width="50%" 
+                    height="50%"
+                />
                 <figcaption>The hobby at a glance.</figcaption>
                 <p class="ai-note">Prompt (if AI image): "..."</p>
             </figure>
@@ -68,13 +157,18 @@
         </section>
 
         <!--When-->
-        <section id="when" class="active">
+        <section id="when">
             <h2>When (Best Times / Schedule / Seasons)</h2>
             <article>
                 <p>Share the best times or seasons to practice and why</p>
             </article>
             <figure>
-                <img src="images/placeholder.png" alt="Placeholder Image" width="50%" height="50%">
+                <img 
+                    src="images/placeholder.png" 
+                    alt="Placeholder Image" 
+                    width="50%" 
+                    height="50%"
+                />
                 <figcaption>Optimal timing for the hobby.</figcaption>
                 <p class="ai-note">Prompt (if AI image): "..."</p>
             </figure>
@@ -90,11 +184,16 @@
         </section>
 
         <!--Where-->
-        <section id="where" class="active">
+        <section id="where">
             <h2>Where (Best Locations / Places)</h2>
             <article><p>Recommend locations, gear placement at home, or go-to venues.</p></article>
             <figure>
-                <img src="image/placeholder.png" alt="placeholder image for a schedule" width="50%" height="50%">
+                <img 
+                    src="image/placeholder.png" 
+                    alt="placeholder image for a schedule" 
+                    width="50%" 
+                    height="50%"
+                />
                 <figcaption>Ideal locations for the hobby.</figcaption>
                 <p clas="ai-note">Prompt (if AI image): "..."</p>
             </figure>
@@ -108,7 +207,7 @@
         </section>
 
         <!--How-->
-        <section id="how" class="active">
+        <section id="how">
             <h2>How</h2>
             <article>
                 <ol>
@@ -118,7 +217,12 @@
                 </ol>
             </article>
             <figure>
-                <img src="images/placeholder.png" alt="Placeholder Image" width="50%" height="50%">
+                <img 
+                    src="images/placeholder.png" 
+                    alt="Placeholder Image" 
+                    width="50%" 
+                    height="50%"
+                />
                 <figcaption>Steps to get started.</figcaption>
                 <p class="ai-note">Prompt (if AI image): "..."</p>  
             </figure>
@@ -133,13 +237,18 @@
         </section>
 
         <!--Why-->
-        <section id="why" class="active">
+        <section id="why">
             <h2>Why</h2>
             <article>
                 <p>Explain benefits: community, health, skill-building, creativity, etc.</p>
             </article>
             <figure>
-                <img src="images/placeholder.png" alt="Placeholder Image" width="50%" height="50%">
+                <img 
+                    src="images/placeholder.png" 
+                    alt="Placeholder Image" 
+                    width="50%" 
+                    height="50%"
+                />
                 <figcaption>Benefits of engaging in the hobby.</figcaption>
                 <p class="ai-note">Prompt (if AI image): "..."</p>
             </figure>
@@ -147,7 +256,7 @@
         </section>
 
         <!--AI Prompts-->
-        <section id="ai" class="active">
+        <section id="ai">
             <h2>AI Prompts</h2>
             <article>
                 <p>If you used AI for **code or text**, list the prompts and model details here.</p>
@@ -162,7 +271,12 @@
                 </ul>
             </article>
             <figure>
-                <img src="images/placeholder.png" alt="Placeholder Image" width="50%" height="50%">
+                <img 
+                    src="images/placeholder.png" 
+                    alt="Placeholder Image" 
+                    width="50%" 
+                    height="50%"
+                />
                 <figcaption>Consistent visual style across images</figcaption>
                 <p class="ai-note">Prompt (if AI image): "..."</p>
             </figure>
