@@ -51,6 +51,11 @@
             gap: .5rem;
             margin-top: .5rem;
         }
+        nav .divider{
+            opacity: .65;
+            user-select: none;
+            font-size: 25px;
+        }
         nav a{
             color:var(--color1);
             text-decoration: none;
@@ -155,9 +160,17 @@
         footer a{
             color: var(--color1);
             text-decoration: none;
-            border
+            border: 1px solid var(--color2);
+            border-radius: 9px;
+            padding: .35rem .7rem;
+            background: var(--color3);
         }
-
+        footer a:hover, footer a:focus{
+            color: var(--color3);
+            background: var(--color1);
+            border-color: var(--color3);
+            outline: none;
+        }
     </style>
 </head>
 
@@ -186,8 +199,10 @@
     <main>
         <!--Who-->
         <section id="who">
-            <h2>Who (About / About Me / Who We Are)</h2>
-            <article><p>Introduce yourself or your group and why this hobby matters to you.</p></article>
+            <h2>About Me</h2>
+            <article>
+                <p>Introduce yourself or your group and why this hobby matters to you.</p>
+            </article>
             <figure>
                 <img 
                     src="images/placeholder.png" 
