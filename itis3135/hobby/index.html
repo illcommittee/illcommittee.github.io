@@ -3,17 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ITIS Midterm - Hobby Website</title>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <!--Input styles here-->
+    <style>
+        
+    </style>
 </head>
-<body>
-    <h1>This is the website name</h1>
-    <main>
-        <h2>This is the page name</h2>
-        <h3 id = "demo" onclick="myFunction()">Woohoooo</h3>
 
+<body>
+    <header>
+        <h1>Lobby</h1>
+        <nav aria-label="Sections">
+            <a href="#who" data-target="who" aria-current="page">Who</a>
+            <a href="#what" data-target="what" aria-current="page">What</a>
+            <a href="#when" data-target="when" aria-current="page">When</a>
+            <a href="#where" data-target="where" aria-current="page">Where</a>
+            <a href="#how" data-target="how" aria-current="page">How</a>
+            <a href="#why" data-target="why" aria-current="page">Why</a>
+            <a href="#ai" data-target="ai" aria-current="page">AI Prompts</a>
+        </nav>
+    </header>
+
+    <main>
+        <!--Who-->
+        <section id="who" class="active">
+            <h2>Who (About / About Me / Who We Are)</h2>
+            <article><p>Introduce yourself or your group and why this hobby matters to you.</p></article>
+            <figure>
+                <img src="images/placeholder.png" alt="Placeholder Image" width="50%" height="50%">
+                <figcaption>Figure 1: A caption of the image being shown</figcaption>
+                <p class="ai-note">Prompt (if AI image): "Describe your prompt here."</p>
+            </figure>
+            <article>
+                <form>
+                    <label for="fav">Your favorite thing about this hobby</label>
+                    <input id="fav" placeholder="e.g., Community, creativity, challenge">
+                    <button type="submit">Submit (demo)</button>
+                </form>
+            </article>
+        </section>
+
+        <!--What (Default)-->
+        <section id="what" class="active">
+            <h2>What (Home Page - Loads first, explains the hobby)</h2>
+            <article>
+                <p>Define the hobby in 2-3 sentences, including core terms, tools, or goals.</p>
+            </article>
+            <figure>
+                <img src="images/placeholder.png" alt="Placeholder Image" width="50%" height="50%">
+                <figcaption>The hobby at a glance.</figcaption>
+                <p class="ai-note">Prompt (if AI image): "..."</p>
+            </figure>
+            <article>
+                <table aria-label="Key facts">
+                    <thead><tr><th>Aspect<th>Details</th></tr></thead>
+                    <tbody>
+                        <tr><td>Tools</td><td>List the essentials</td></tr>
+                        <tr><td>Time</td><td>Typical session length</td></tr>
+                        <tr><td>Cost</td><td>Beginner budget</td></tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <!--When-->
+        <section id="when" class="active">
+            <h2>When (Best Times / Schedule / Seasons)</h2>
+            <article>
+                <p>Share the best times or seasons to practice and why</p>
+            </article>
+            <figure>
+                <img src="images/placeholder.png" alt="Placeholder Image" width="50%" height="50%">
+                <figcaption>Optimal timing for the hobby.</figcaption>
+                <p class="ai-note">Prompt (if AI image): "..."</p>
+            </figure>
+            <article>
+                <table aria-label="Weekly schedule">
+                    <thead><tr><th>Day</th><th>Best Window</th></tr></thead>
+                    <tbody>
+                        <tr><td>Weekdays</td><td>Time range</td></tr>
+                        <tr><td>Weekend</td><td>Time range</td></tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <!--Where-->
+        <section id="where" class="active">
+            <h2>Where (Best Locations / Places)</h2>
+            <article><p>Recommend locations, gear placement at home, or go-to venues.</p></article>
+            <figure>
+                <img src="image/placeholder.png" alt="placeholder image for a schedule" width="50%" height="50%">
+                <figcaption>Ideal locations for the hobby.</figcaption>
+                <p clas="ai-note">Prompt (if AI image): "..."</p>
+            </figure>
+            <article>
+                <ul>
+                    <li>Home - Advantages</li>
+                    <li>Local club / Venue - Advantages</li>
+                    <li>Outdoors / City Sports - Tips</li>
+                </ul>
+            </article>
+        </section>
+
+        <!--How-->
+        <section id="how" class="active">
+            <h2>How</h2>
+            <article>
+                <ol>
+                    <li>Step 1: ""</li>
+                    <li>Step 2: ""</li>
+                    <li>Step 3: ""</li>
+                </ol>
+            </article>
+            <figure>
+                <img src="images/placeholder.png" alt="Placeholder Image" width="50%" height="50%">
+                <figcaption>Steps to get started.</figcaption>
+                <p class="ai-note">Prompt (if AI image): "..."</p>  
+            </figure>
+            <article>
+                <form>
+                    <label for="x">Helper (demo): value</label>
+                    <input id="x" placeholder="Enter something">
+                    <button type="button" id="tool">Run Helper</button>
+                    <p id="toolOut" aria-live="polite"></p>
+                </form>
+            </article>
+        </section>
+
+        <!--Why-->
+        <section id="why" class="active">
+            <h2>Why</h2>
+            <article>
+                <p>Explain benefits: community, health, skill-building, creativity, etc.</p>
+            </article>
+            <figure>
+                <img src="images/placeholder.png" alt="Placeholder Image" width="50%" height="50%">
+                <figcaption>Benefits of engaging in the hobby.</figcaption>
+                <p class="ai-note">Prompt (if AI image): "..."</p>
+            </figure>
+            <article><p><strong>Outcome:</strong> Summarize what participants gain.</p></article>
+        </section>
+
+        <!--AI Prompts-->
+        <section id="ai" class="active">
+            <h2>AI Prompts</h2>
+            <article>
+                <p>If you used AI for **code or text**, list the prompts and model details here.</p>
+                <p>If you only used AI for images, include the statement: <em>"I only used AI for images."</em></p>
+                <ul>
+                    <li>Who: [Prompt Here]</li>
+                    <li>What: [Prompt Here]</li>
+                    <li>When: [Prompt Here]</li>
+                    <li>Where: [Prompt Here]</li>
+                    <li>How: [Prompt Here]</li>
+                    <li>Why: [Prompt Here]</li>
+                </ul>
+            </article>
+            <figure>
+                <img src="images/placeholder.png" alt="Placeholder Image" width="50%" height="50%">
+                <figcaption>Consistent visual style across images</figcaption>
+                <p class="ai-note">Prompt (if AI image): "..."</p>
+            </figure>
+        </section>
     </main>
     <footer>
-        Impressive footer goes here
+        <nav>
+            <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fwebpages.charlotte.edu%2Fngustaf1%2Fitis3135%2Fhobby%2F">HTML Validation</a>
+            
+            <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwebpages.charlotte.edu%2Fngustaf1%2Fitis3135%2Fhobby%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">CSS Validator</a>
+            <p>
+                <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px"
+                        src="https://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="Valid CSS!" />
+                </a>
+            </p>
+            
+            <a href="/itis3135/ndgllc.co/index.html">Designed By: NDG LLC</a>
+        </nav>
     </footer>
     <script src="scripts/default.js"></script>
 </body>
