@@ -15,6 +15,9 @@
             --color5: #540804ff; /*Rosewood*/
             --color6: #f8f5f2ff; /*Paper*/
             --color7: #5e0b0bff; /*Dark Red*/
+            --color8: #3c0707ff; /*Very Dark Red*/
+            --color9: #f3e0dbff; /*Light paper*/
+            --color10: #310400ff; /*Almost Black Red*/
         }
         *{
             box-sizing: border-box;
@@ -63,9 +66,12 @@
             border-color: var(--color3);
             outline: none;
         }
+        /* 
         main section{
             display: none;
-        }
+            Hide inactive elements, change when final look needed
+        } 
+        */
         main section.active{
             display: block;
             padding: 1rem;
@@ -74,9 +80,82 @@
             background: var(--color7);
             margin-bottom: 1.3rem;
         }
-        footer{
-            border-top: 2px solid var(--color2);
+        figure{
+            margin: 1rem 0;
+            border: 1px solid var(--color2);
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: var(--color8);
+        }
+        figure img{
+            width: 100%;
+            height: auto;
+            display: block;
+            max-width: 700px;
+            margin-inline: auto;
+        }
+        figcaption{
+            padding: .6rem .8rem;
+            border-top: 1px solid var(--color2);
 
+        }
+        .ai-note{
+            padding: .6rem .8rem;
+            font-style: italic;
+            color: var(--color9);
+            border-top: 1px dashed var(--color2);
+        }
+        form label{
+            display: block;
+            margin-top: .6rem;
+            font-weight: 600;
+        }
+        input, select{
+            width: 100%;
+            padding: .5rem;
+            margin-top: .3rem;
+            background: var(--color8);
+            color: var(--color6);
+            border: 1px solid var(--jasper);
+            border-radius: 10px;
+        }
+        button{
+            margin-top: .8rem;
+            padding: .55rem 1rem;
+            border: 0;
+            border-radius: 10px;
+            background: linear-gradient(
+                90deg,
+                var(--color1),
+                var(--color3)
+            );
+            color: var(--color10);
+            font-weight: 800;
+            cursor: pointer;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: .6rem;
+        }
+        th, td{
+            border: 1px solid var(--color2);
+            padding: .55rem;
+        }
+        th{
+            text-align: left;
+            background: var(--color8);
+        }
+        footer nav{
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            align-items: center;
+        }
+        footer a{
+            color: var(--color1);
+            text-decoration: none;
+            border
         }
 
     </style>
@@ -113,8 +192,6 @@
                 <img 
                     src="images/placeholder.png" 
                     alt="Placeholder Image" 
-                    width="50%" 
-                    height="50%"
                 />
                 <figcaption>Figure 1: A caption of the image being shown</figcaption>
                 <p class="ai-note">Prompt (if AI image): "Describe your prompt here."</p>
@@ -138,8 +215,6 @@
                 <img 
                     src="images/placeholder.png" 
                     alt="Placeholder Image" 
-                    width="50%" 
-                    height="50%"
                 />
                 <figcaption>The hobby at a glance.</figcaption>
                 <p class="ai-note">Prompt (if AI image): "..."</p>
@@ -166,8 +241,6 @@
                 <img 
                     src="images/placeholder.png" 
                     alt="Placeholder Image" 
-                    width="50%" 
-                    height="50%"
                 />
                 <figcaption>Optimal timing for the hobby.</figcaption>
                 <p class="ai-note">Prompt (if AI image): "..."</p>
@@ -191,8 +264,6 @@
                 <img 
                     src="image/placeholder.png" 
                     alt="placeholder image for a schedule" 
-                    width="50%" 
-                    height="50%"
                 />
                 <figcaption>Ideal locations for the hobby.</figcaption>
                 <p clas="ai-note">Prompt (if AI image): "..."</p>
@@ -220,8 +291,6 @@
                 <img 
                     src="images/placeholder.png" 
                     alt="Placeholder Image" 
-                    width="50%" 
-                    height="50%"
                 />
                 <figcaption>Steps to get started.</figcaption>
                 <p class="ai-note">Prompt (if AI image): "..."</p>  
@@ -246,8 +315,6 @@
                 <img 
                     src="images/placeholder.png" 
                     alt="Placeholder Image" 
-                    width="50%" 
-                    height="50%"
                 />
                 <figcaption>Benefits of engaging in the hobby.</figcaption>
                 <p class="ai-note">Prompt (if AI image): "..."</p>
@@ -274,8 +341,6 @@
                 <img 
                     src="images/placeholder.png" 
                     alt="Placeholder Image" 
-                    width="50%" 
-                    height="50%"
                 />
                 <figcaption>Consistent visual style across images</figcaption>
                 <p class="ai-note">Prompt (if AI image): "..."</p>
