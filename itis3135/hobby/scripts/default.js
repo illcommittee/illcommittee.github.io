@@ -135,10 +135,9 @@ function setupWaterHelper(){
 /**
  * Page load
  * DOMContentLoaded fires when the HTML is parsed and ready
- 
+ */
 document.addEventListener('DOMContentLoaded', () => {
     startApp();
     setupWaterHelper();
     setupFavoriteForm();
 });
-*/
