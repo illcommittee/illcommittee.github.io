@@ -71,6 +71,10 @@
             border-color: var(--color3);
             outline: none;
         }
+        nav a:focus-visible, footer a:focus-visible{
+            outline: 2px dashed var(--color1);
+            outline-offset: 2px;
+        }
         main section{
             display: none;
         } 
@@ -173,7 +177,7 @@
 
 <body>
     <header>
-        <h1>Lobby</h1>
+        <h1>Camping</h1>
         <nav>
             <span class="divider">✦</span>
             <a href="#who" data-target="who">Who</a>
@@ -306,7 +310,7 @@
             <h2>Where (Best Locations / Places)</h2>
             <article>
                 <p>
-                    North Carolina is a gem: I'm happy anywhere-car camping, backpacking, hammocking, it's all the same to me.
+                    North Carolina is a gem: I’m happy anywhere. Whether it's car camping, backpacking, hammocking, it’s all the same to me.
                     Favorite regions include the <strong>Blue Ridge</strong> and the <strong>Piedmont</strong>. 
                     Always check permits, fire regulations, and Leave No Trace. 
                     Also note, some spots require reservations, especially in peak seasons.
@@ -362,8 +366,8 @@
                 <ol>
                     <li>Boil a pot of water, once boiling, add cubed potatoes until tender.</li>
                     <li>While boiling, layer double sheets of heavy-duty foil, throw at least 1tbsp of butter in.</li>
-                    <li>Add veggies and cut meat; season well with cajun seasoning; add some more butter on top.</li>
-                    <li>Once potatos are mostly cooked, add those to the packet</li>
+                    <li>Add veggies and cut meat; season well with Cajun seasoning; add some more butter on top.</li>
+                    <li>Once potatoes are mostly cooked, add those to the packet</li>
                     <li>Fold one layer of foil and seal tightly</li>
                     <li>Take the second layer of foil, place it over the top of the already folded layer. Making sure it's tightly sealed</li>
                     <li>Cook 10-15 minutes per side on coals/grate (rotate once). Check doneness, be careful though, the steam is hot.</li>
@@ -432,6 +436,7 @@
         </section>
     </main>
     <footer>
+        <p>Designed By <a href="/itis3135/ndgllc.co/index.html">NDG LLC</a></p>
         <nav>
             <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fwebpages.charlotte.edu%2Fngustaf1%2Fitis3135%2Fhobby%2F">HTML Validation</a>
             
@@ -443,8 +448,6 @@
                         alt="Valid CSS!" />
                 </a>
             </p>
-            
-            <a href="/itis3135/ndgllc.co/index.html">Designed By: NDG LLC</a>
         </nav>
     </footer>
     <script src="scripts/default.js"></script>
