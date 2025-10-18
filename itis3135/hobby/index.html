@@ -8,16 +8,16 @@
     <!--Input styles here-->
     <style>
         :root{
-            --color1: #ea8c55ff; /*Persian Orange*/
-            --color2: #c75146ff; /*Jasper*/
-            --color3: #ad2e24ff; /*Fire Brick*/
-            --color4: #81171bff; /*Falu Red*/
-            --color5: #540804ff; /*Rosewood*/
-            --color6: #f8f5f2ff; /*Paper*/
-            --color7: #5e0b0bff; /*Dark Red*/
-            --color8: #3c0707ff; /*Very Dark Red*/
-            --color9: #f3e0dbff; /*Light paper*/
-            --color10: #310400ff; /*Almost Black Red*/
+            --color1:#E07A5F; /* ember clay (accent) */
+            --color2:#8D4A3A; /* baked clay (borders) */
+            --color3:#3D5A40; /* pine green (buttons hover) */
+            --color4:#22333B; /* slate night (nav bg) */
+            --color5:#1B1F22; /* near-black slate (page bg) */
+            --color6:#F2E9E4; /* canvas paper (text) */
+            --color7:#2E3A2F; /* deep pine (cards) */
+            --color8:#2A1E1A; /* dark ember brown */
+            --color9:#EDE3DD; /* light paper (notes) */
+            --color10:#0F0F10; /* almost black (text on accents) */
         }
         *{
             box-sizing: border-box;
@@ -75,9 +75,9 @@
             outline: 2px dashed var(--color1);
             outline-offset: 2px;
         }
-        main section{
+        /*main section{
             display: none;
-        } 
+        }*/ 
         main section.active{
             display: block;
             padding: 1rem;
@@ -218,11 +218,12 @@
             </article>
             <figure>
                 <img 
-                    src="images/placeholder.png" 
-                    alt="Placeholder Image" 
+                    src="images/CampPic1.jpg" 
+                    alt="Picture of me (left) and my brother (right) at a campsite in the mountains" 
                 />
-                <figcaption>Eagle Scout roots → lifelong camper.</figcaption>
-                <p class="ai-note">Prompt (if AI image): "Describe your prompt here."</p>
+                <figcaption>
+                    Eagle Scout roots → lifelong camper. I'm with my brother at a camp ground here, this was a very easy camping trip for us.
+                </figcaption>
             </figure>
             <article>
                 <form>
@@ -230,6 +231,8 @@
                     <input id="fav" placeholder="e.g., campfire cooking, hiking, stargazing, fishing">
                     <button type="submit">Submit (demo)</button>
                 </form>
+
+                <p id="favOutput" aria-live="polite"></p>
             </article>
         </section>
 
@@ -243,11 +246,11 @@
             </article>
             <figure>
                 <img 
-                    src="images/placeholder.png" 
-                    alt="Placeholder Image" 
+                    src="images/GPTGeneratedWhat.png" 
+                    alt="A flat-lay of camping essentials arranged neatly on a canvas tarp, lit by a lantern. Includes a rolled sleeping bag, gloves, map, compass, knife, and first aid kit in warm earthy tones." 
                 />
                 <figcaption>Simple gear, big memories.</figcaption>
-                <p class="ai-note">Prompt (if AI image): "..."</p>
+                <p class="ai-note">Prompt (if AI image): "Flat-lay of essential camping gear arranged neatly on a canvas tarp: tent bag, sleeping bag and pad, headlamp, first-aid kit, compact stove, pot, water filter, map and compass, knife, gloves. Warm lantern light from one side, soft shadows, earthy colors (pine/canvas/clay). Photoreal, 50 mm look."</p>
             </figure>
             <article>
                 <table>
@@ -287,11 +290,11 @@
             </article>
             <figure>
                 <img 
-                    src="images/placeholder.png" 
-                    alt="Placeholder Image" 
+                    src="images/GPTGeneratedWhen.png" 
+                    alt="Early morning campsite at the edge of the woods with a tent, backpack, boots, and steaming mug beside a small campfire under soft golden light." 
                 />
-                <figcaption>Optimal timing for the hobby.</figcaption>
-                <p class="ai-note">Prompt (if AI image): "..."</p>
+                <figcaption>Cool air, quiet trials, perfect mornings.</figcaption>
+                <p class="ai-note">Prompt (if AI image): "A peaceful fall-to-winter campsite in the Blue Ridge Mountains at dawn. A light frost covers the grass, orange leaves scattered near a tent, with a small campfire sending faint smoke into a cool blue morning sky. A mug of steam rests beside the fire, backpack and boots nearby. Soft sunlight filters through bare trees, mixing warm amber and cold slate tones. Photoreal, cinematic lighting, 35 mm lens, shallow depth of field, earthy palette (pine/clay/ember/slate/canvas)."</p>
             </figure>
             <article>
                 <table>
@@ -319,11 +322,11 @@
             </article>
             <figure>
                 <img 
-                    src="images/placeholder.png" 
-                    alt="placeholder image for a schedule" 
+                    src="images/GPTGeneratedWhere.png" 
+                    alt="Misty Blue Ridge Mountains at sunrise with a small tent among rhododendron and pine trees." 
                 />
-                <figcaption>Ideal locations for the hobby.</figcaption>
-                <p class="ai-note">Prompt (if AI image): "..."</p>
+                <figcaption>North Carolina’s Blue Ridge—easy access, big vistas.</figcaption>
+                <p class="ai-note">Prompt (if AI image): "Scenic sunrise in the Blue Ridge Mountains of North Carolina, layers of misty ridges fading into the distance, a small tent nestled among rhododendron and pine trees in the foreground, soft golden light, earthy tones of pine green, clay red, and slate blue. Photoreal, cinematic, 35 mm lens, shallow depth of field, natural composition."</p>
             </figure>
             <article>
                 <ul>
@@ -348,11 +351,11 @@
             </article>
             <figure>
                 <img 
-                    src="images/placeholder.png" 
-                    alt="Placeholder Image" 
+                    src="images/GPTGeneratedHow.png" 
+                    alt="Foil-wrapped campfire meals cooking over glowing coals, steam rising as a hand adjusts one with tongs." 
                 />
-                <figcaption>Steps to get started.</figcaption>
-                <p class="ai-note">Prompt (if AI image): "..."</p>  
+                <figcaption>Simple meals, cooked right on the coals.</figcaption>
+                <p class="ai-note">Prompt (if AI image): "Close-up of foil-wrapped hobo meals cooking over glowing campfire coals at dusk. Butter melts down the foil, steam rising softly into the cool night air. A gloved hand or metal tongs adjusts one of the packets, surrounded by glowing wood embers and faint smoke. Warm orange firelight contrasts with dark blue evening shadows, earthy tones of ember, clay, pine, and slate. Photoreal, cinematic lighting, 50 mm lens, shallow depth of field."</p>  
             </figure>
             <article>
                 <h3>Camp Recipe: Hobo Packs (Foil Packets)</h3>
@@ -360,7 +363,7 @@
                 <p>
                     <strong>Ingredients (1-2 servings):</strong> 1 potato (cubed), 1 small onion (diced), 
                     1 pack of kielbasa sausage, 1 pack of andouille sausage, butter, cajun seasoning, 
-                    squash (cubed), zucchini (cubed), 1 can of corn, heavy-duty foil, pot for water.
+                    1 squash (cubed), 1 zucchini (cubed), 1 can of corn, heavy-duty foil, pot for water.
                 </p>
                 <p><strong>Steps:</strong></p>
                 <ol>
@@ -397,11 +400,11 @@
             </article>
             <figure>
                 <img 
-                    src="images/placeholder.png" 
-                    alt="Placeholder Image" 
+                    src="images/GPTGeneratedWhy.png" 
+                    alt="Hammock between pine trees beneath a starry sky, soft lantern light nearby and a faint campfire glowing in the background." 
                 />
-                <figcaption>Benefits of engaging in the hobby.</figcaption>
-                <p class="ai-note">Prompt (if AI image): "..."</p>
+                <figcaption>A fading fire and bright stars is the perfect ending.</figcaption>
+                <p class="ai-note">Prompt (if AI image): "A hammock strung between tall pine trees under a clear starry sky, with a faint campfire glowing in the background. A soft lantern rests on the ground near the hammock, casting a warm amber light against the cool blue night. The forest is quiet, smoke drifts upward from the dying fire, and a blanket or sleeping bag is visible in the hammock. Photoreal, cinematic lighting, 35 mm lens, shallow depth of field, earthy tones of ember, pine, slate, and canvas."</p>
             </figure>
             <article>
                 <p>
@@ -414,9 +417,9 @@
         <section id="ai">
             <h2>AI Prompts</h2>
             <article>
-                <p>If I use AI for <strong>code or text</strong>, the exact prompts and model details go here. If I only used AI for images, I will include the statement:</p>
-                <p><em>"I only used AI for images."</em></p>
+                <p>I used AI for <strong>JS code and image generation</strong>, the exact prompts and model details will be provided bwlow</p>
                 <ul>
+                    <li>Model Details: </li>
                     <li>Who image: [Exact Prompt Here]</li>
                     <li>What image: [Exact Prompt Here]</li>
                     <li>When image: [Exact Prompt Here]</li>
@@ -431,7 +434,6 @@
                     alt="Placeholder Image" 
                 />
                 <figcaption>Consistent visual style across images</figcaption>
-                <p class="ai-note">Prompt (if AI image): "..."</p>
             </figure>
         </section>
     </main>
