@@ -58,8 +58,8 @@ function setupNav(){
 
 /**
  * Decide which section to show first
- * If the URL already has a #has, honor it
- * Otherwise default to what
+ * If the URL already has a #hash, honor it.
+ * Otherwise default to "what".
  */
 function startApp(){
     setupNav();
