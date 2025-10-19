@@ -8,188 +8,240 @@
     <!--Input styles here-->
     <style>
         :root{
-            --color1:#E07A5F; /* ember clay (accent) */
-            --color2:#8D4A3A; /* baked clay (borders) */
-            --color3:#3D5A40; /* pine green (buttons hover) */
-            --color4:#22333B; /* slate night (nav bg) */
-            --color5:#1B1F22; /* near-black slate (page bg) */
-            --color6:#F2E9E4; /* canvas paper (text) */
-            --color7:#2E3A2F; /* deep pine (cards) */
-            --color8:#2A1E1A; /* dark ember brown */
-            --color9:#EDE3DD; /* light paper (notes) */
-            --color10:#0F0F10; /* almost black (text on accents) */
+            /* palette */
+            --color1:#E07A5F; /* accent */
+            --color2:#3D5A40; /* secondary */
+            --color3:#22333B; /* dark slate (nav bg) */
+            --color4:#1B1F22; /* page bg */
+            --color5:#F2E9E4; /* text */
+            --color6:#2A1E1A; /* card/figure bg */
+            --color7:#0F0F10; /* text on accents */
+
+            --radius:12px;
+            --radius-sm:9px;
+            --gap:.5rem;
+            --pad:.6rem;
+            --border:1px solid var(--color2);
         }
-        *{
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        *{ 
+            box-sizing:border-box; 
+            margin:0; 
+            padding:0; 
         }
         body{
-            background: var(--color5);
-            color: var(--color6);
-            font-family: 'Libre Franklin', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0 auto;
-            max-width: 1100px;
-            padding: 1rem;
+            background:var(--color4);
+            color:var(--color5);
+            font-family:'Libre Franklin',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+            line-height:1.6;
+            max-width:1100px;
+            margin:0 auto;
+            padding:1rem;
         }
-        header, main, footer{
-            margin-block: 1rem;
+        header, main, footer{ 
+            margin-block:1rem; 
         }
         h1,h2,h3{
-            font-family: 'Bree Serif', serif;
-            color: var(--color1);
-            margin: 0 0 .4rem 0;
-        }
-        header{
-            border-bottom: 2px solid var(--color2);
-            padding-bottom: .5rem;
-        }
-        nav{
-            display: flex;
-            flex-wrap: wrap;
-            gap: .5rem;
-            margin-top: .5rem;
-        }
-        nav .divider{
-            opacity: .65;
-            user-select: none;
-            font-size: 25px;
-        }
-        nav a{
+            font-family:'Bree Serif',serif;
             color:var(--color1);
-            text-decoration: none;
-            border: 1px solid var(--color2);
-            border-radius: 9px;
-            padding: .45rem .85rem;
-            background: var(--color4);
-            transition: .2s;
+            margin:0 0 .4rem;
         }
-        nav a:hover, nav a:focus{
+        header{ 
+            border-bottom:2px solid var(--color2); 
+            padding-bottom:.5rem; 
+        }
+        nav{ 
+            display:flex; 
+            flex-wrap:wrap; 
+            gap:.5rem;
+            margin-top:.5rem; 
+        }
+        @media(max-width: 720px){
+            nav{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+                gap: .6rem;
+            }
+            nav .divider{
+                display: none
+            }
+            nav a{
+                justify-content: center;
+                width: 100%;
+            }
+        }
+        nav .divider{ 
+            opacity:.65; 
+            user-select:none; 
+            font-size:25px; 
+        }
+        nav a, footer a{
+            display:inline-flex; 
+            align-items:center; 
+            gap:.4rem;
+            text-decoration:none;
+            color:var(--color1);
+            background:var(--color3);
+            border:var(--border);
+            border-radius:var(--radius-sm);
+            padding:.45rem .85rem;
+            transition:.2s;
+        }
+        nav a:hover, footer a:hover, nav a:focus, footer a:focus{
             color:var(--color3);
-            background: var(--color1);
-            border-color: var(--color3);
+            background:var(--color1);
+            border-color:var(--color3);
         }
         nav a:focus-visible, footer a:focus-visible{
-            outline: 2px dashed var(--color1);
-            outline-offset: 2px;
+            outline:2px dashed var(--color1);
+            outline-offset:2px;
         }
-        
-        main section{
-            display: none;
+        main section{ 
+            display:none; 
         }
-        
         main .active{
-            display: block;
-            padding: 1rem;
-            border: 1px solid var(--color2);
-            border-radius: 12px;
-            background: var(--color7);
-            margin-bottom: 1.3rem;
+            display:block;
+            padding:1rem;
+            border:var(--border);
+            border-radius:var(--radius);
+            background:var(--color6);
+            margin-bottom:1.3rem;
         }
         figure{
-            margin: 1rem 0;
-            border: 1px solid var(--color2);
-            border-radius: 12px;
-            overflow: hidden;
-            background-color: var(--color8);
+            margin:1rem 0;
+            border:var(--border);
+            border-radius:var(--radius);
+            overflow:hidden;
+            background:var(--color6);
         }
-        figure img{
-            width: 100%;
-            height: auto;
-            display: block;
-            max-width: 700px;
-            margin-inline: auto;
+        figure img{ 
+            width:100%; 
+            height:auto; 
+            display:block; 
+            max-width:700px; 
+            margin-inline:auto; 
         }
-        figcaption{
-            padding: .6rem .8rem;
-            border-top: 1px solid var(--color2);
-
+        figcaption{ 
+            padding:.6rem .8rem; 
+            border-top:var(--border); 
         }
         .ai-note{
-            padding: .6rem .8rem;
-            font-style: italic;
-            color: var(--color9);
-            border-top: 1px dashed var(--color2);
+            display:block;
+            padding:var(--pad) .8rem;
+            font-style:italic;
+            color:var(--color5);
+            border-top:1px dashed var(--color2);
         }
-        form label{
+        figcaption .ai-note {
             display: block;
-            margin-top: .6rem;
-            font-weight: 600;
+            padding: .4rem 0 0 0;
+            margin-left: 0;
+            border-top: 1px dashed var(--color2);
+            opacity: 0.85;
+            font-style: italic;
+            color: var(--color5);
+        }
+        figcaption .ai-note::before {
+            content: " • ";
+            opacity: .6;
+        }
+        form label{ 
+            display:block; 
+            margin-top:.6rem; 
+            font-weight:600; 
         }
         input, select{
-            padding: .5rem;
-            margin-top: .3rem;
-            background: var(--color8);
-            color: var(--color6);
-            border: 1px solid var(--color2);
-            border-radius: 10px;
+            padding:.5rem; margin-top:.3rem;
+            background:var(--color6);
+            color:var(--color5);
+            border:var(--border);
+            border-radius:10px;
+        }
+        input::placeholder{ 
+            color:rgba(242,233,228,.6); 
         }
         button{
-            margin-top: .8rem;
-            padding: .55rem 1rem;
-            border: 0;
-            border-radius: 10px;
-            background: linear-gradient(
+            margin-top:.8rem; 
+            padding:.55rem 1rem; 
+            border:0; 
+            border-radius:10px;
+            background:linear-gradient(
                 90deg,
                 var(--color1),
-                var(--color3)
-            );
-            color: var(--color10);
-            font-weight: 800;
-            cursor: pointer;
+                var(--color2)
+                );
+                color:var(--color7); font-weight:800; cursor:pointer;
         }
-        table{
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: .6rem;
+        table{ 
+            width:100%; 
+            border-collapse:collapse; 
+            margin-top:.6rem; 
         }
-        th, td{
-            border: 1px solid var(--color2);
-            padding: .55rem;
+        th, td{ 
+            border:var(--border); 
+            padding:.55rem; 
         }
-        th{
-            text-align: left;
-            background: var(--color8);
+        th{ 
+            text-align:left; 
+            background:var(--color6); 
         }
-        ol{
+        ol, ul{
             margin-left: 1.5rem;
-            padding-left: 0.5rem;
+            padding-left: .5rem;
             line-height: 1.65;
         }
-        ol li{
+        ol li{ 
+            margin-bottom: .4rem; 
+        }
+        ul li{ 
+            margin-bottom: .3rem; 
+        }
+        ul li::marker{ 
+            color: var(--color1); 
+        }
+        ul li::marker{ 
+            color:var(--color1); 
+        }
+        footer nav{ 
+            display:inline-flex;
+            flex-wrap:wrap;
+            align-items:center;
+            gap:.35rem;
+            margin:0;
+            vertical-align:middle;
+        }
+        footer p{
             margin-bottom: 0.4rem;
         }
-        ul{
-            margin-left: 1.5rem;
-            padding-left: 0.5rem;
-            line-height: 1.65;
-            list-style-position: outside;
+        footer nav .pill{
+            border: none;
+            border-radius: 6px;
+            overflow: hidden;
+            font-weight: 600;
+            color: var(--color5);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
         }
-        ul li{
-            margin-bottom: 0.3rem;
+        footer nav .pill-left{ 
+            background:#fff; 
+            color:#1a57a8; 
+            padding:.25rem .45rem; 
         }
-        ul li::marker{
-            color: var(--color1);
+        footer nav .pill-right{ 
+            background:#f2c464; 
+            color:#2b2b2b; 
+            padding:.25rem .55rem; 
         }
-        footer nav{
-            display: flex;
-            flex-wrap: wrap;
-            gap: .5rem;
-            align-items: center;
+        footer nav .pill:hover{ 
+            border-color:var(--color1); 
         }
-        footer a{
-            color: var(--color1);
-            text-decoration: none;
-            border: 1px solid var(--color2);
-            border-radius: 9px;
-            padding: .35rem .7rem;
-            background: var(--color3);
-        }
-        footer a:hover, footer a:focus{
-            color: var(--color3);
-            background: var(--color1);
-            border-color: var(--color3);
+        footer .validation-label{
+            display:inline-flex;
+            align-items:center;
+            margin:0 .5rem .2rem 0;
+            font-weight:600; 
+            color:var(--color5); 
+            opacity:.85; 
+            font-size:.9rem;
         }
     </style>
 </head>
@@ -221,6 +273,7 @@
         <section id="who">
             <h2>About Me</h2>
             <article>
+                <h3>Why I Camp</h3>
                 <p>
                     I chose camping because I'm an Eagle Scout. 
                     Being outdoors has always had a strong place in my heart. 
@@ -240,10 +293,13 @@
                     src="images/CampPic1.jpg" 
                     alt="Picture of me (left) and my brother (right) at a campsite in the mountains" 
                 />
-                <figcaption>Eagle Scout roots → lifelong camper. I'm with my brother at a camp ground here, this was a very easy camping trip for us.</figcaption>
-                <p class="ai-note"><em>Photo: personal (N. Gustafson).</em></p>
+                <figcaption>
+                    I (left) am with my brother at a camp ground here, this was a very easy camping trip for us.
+                    <p class="ai-note"><em>Photo: personal (N. Gustafson).</em></p>
+                </figcaption>
             </figure>
             <article>
+                <h3>Share Your Favorite Part</h3>
                 <form>
                     <label for="fav">Your favorite part of camping</label>
                     <input id="fav" placeholder="e.g., campfire cooking, hiking, stargazing, fishing">
@@ -258,6 +314,7 @@
         <section id="what" class="active">
             <h2>What (Home Page)</h2>
             <article>
+                <h3>My Definition of Camping</h3>
                 <p>Camping is simply living outside. Whether it's car camping, backpacking, hammocking, or "glamping."</p>
                 <p>The goal: time in nature, skills you can feel in your hands, and memories around a fire.</p>
                 <p>My flavor? colder-weather trips, cozy layers, and good food like <em>hobo packs</em>.</p>
@@ -267,10 +324,13 @@
                     src="images/GPTGeneratedWhat.png" 
                     alt="A flat layout of camp gear such as canvas, tarp, lantern, and knives." 
                 />
-                <figcaption>It’s usually just the basics, and somehow, someway, the best memories.</figcaption>
-                <p class="ai-note"><em>AI prompt summary:</em> flat-lay of core camping gear on a canvas tarp with warm lantern light and earthy colors to convey simplicity and readiness.</p>
+                <figcaption>
+                    It’s usually just the basics, and somehow, someway, the best memories.
+                    <p class="ai-note"><em>AI prompt summary:</em> flat-lay of core camping gear on a canvas tarp with warm lantern light and earthy colors to convey simplicity and readiness.</p>
+                </figcaption>
             </figure>
             <article>
+                <h3>Camping at a Glance</h3>
                 <table>
                     <thead>
                         <tr>
@@ -300,6 +360,7 @@
         <section id="when">
             <h2>When (Best Times / Seasons)</h2>
             <article>
+                <h3>Timing My Adventures</h3>
                 <p>
                     Personally, my favorite seasons are <strong>fall and winter</strong>-cool, 
                     usually drier, fewer bugs, and quiet trails. For a quick weekend reset, 
@@ -311,10 +372,13 @@
                     src="images/GPTGeneratedWhen.png" 
                     alt="Early morning campsite at the edge of the woods with a tent, backpack, boots, and steaming mug beside a small campfire under soft golden light." 
                 />
-                <figcaption>Cool air and quiet trails make the best mornings.</figcaption>
-                <p class="ai-note"><em>AI prompt summary:</em> calm fall-to-winter dawn campsite with light frost, small fire and a steaming mug—emphasizing cool air and quiet trails.</p>
+                <figcaption>
+                    Personally, cool air and quiet trails make the best mornings.
+                    <p class="ai-note"><em>AI prompt summary:</em> calm fall-to-winter dawn campsite with light frost, small fire and a steaming mug—emphasizing cool air and quiet trails.</p>
+                </figcaption>
             </figure>
             <article>
+                <h3>Best Times at a Glance</h3>
                 <table>
                     <thead><tr><th>Day</th><th>Best Window</th></tr></thead>
                     <tbody>
@@ -330,6 +394,7 @@
         <section id="where">
             <h2>Where (Best Locations / Places)</h2>
             <article>
+                <h3>My Favorite Spots</h3>
                 <p>
                     North Carolina is a gem: I’m happy anywhere. Whether it's car camping, backpacking, hammocking, it’s all the same to me.
                     Favorite regions include the <strong>Blue Ridge</strong> and the <strong>Piedmont</strong>. 
@@ -343,10 +408,13 @@
                     src="images/GPTGeneratedWhere.png" 
                     alt="Misty Blue Ridge Mountains at sunrise with a small tent among rhododendron and pine trees." 
                 />
-                <figcaption>North Carolina’s Blue Ridge, always easy to access and huge vistas to see.</figcaption>
-                <p class="ai-note"><em>AI prompt summary:</em> Blue Ridge sunrise with misty ridge layers, tent near rhododendron and pine, highlighting NC landscapes.</p>
+                <figcaption>
+                    North Carolina’s Blue Ridge, always easy to access and huge vistas to see.
+                    <p class="ai-note"><em>AI prompt summary:</em> Blue Ridge sunrise with misty ridge layers, tent near rhododendron and pine, highlighting NC landscapes.</p>
+                </figcaption>
             </figure>
             <article>
+                <h3>Top North Carolina Spots</h3>
                 <ul>
                     <li><strong>Pisgah National Forest</strong> - Classic waterfalls & ridgelines</li>
                     <li><strong>Linville Gorge</strong> - rugged views; be prepared</li>
@@ -361,6 +429,7 @@
         <section id="how">
             <h2>How</h2>
             <article>
+                <h3>How I Prepare for a Trip</h3>
                 <ol>
                     <li><strong>Plan:</strong> check weather, maps, access/permits, fire rules.</li>
                     <li><strong>Pack:</strong> 10 essentials, warm layers, shelter, food, water treatment.</li>
@@ -372,8 +441,10 @@
                     src="images/GPTGeneratedHow.png" 
                     alt="Foil-wrapped campfire meals cooking over glowing coals, steam rising as a hand adjusts one with tongs." 
                 />
-                <figcaption>Nothing fancy: foil, coals, steam, done.</figcaption>
-                <p class="ai-note"><em>AI prompt summary:</em> close-up of foil hobo packs cooking over coals with steam and ember glow to show simple, hearty camp cooking.</p>  
+                <figcaption>
+                    Nothing fancy: foil, coals, steam, done.
+                    <p class="ai-note"><em>AI prompt summary:</em> close-up of foil hobo packs cooking over coals with steam and ember glow to show simple, hearty camp cooking.</p>
+                </figcaption> 
             </figure>
             <article>
                 <h3>Camp Recipe: Hobo Packs (Foil Packets)</h3>
@@ -397,8 +468,9 @@
             </article>
 
             <article>
+                <h3>Trip Helper (Demo)</h3>
                 <form>
-                    <label for="miles">Trip helper (demo): planned miles</label>
+                    <label for="miles">Trip helper: planned miles</label>
                     <input id="miles" type="number" placeholder="e.g., 8">
                     <button type="button" id="tool">Suggest water (L)</button>
                     <p id="toolOut"></p>
@@ -410,6 +482,7 @@
         <section id="why">
             <h2>Why</h2>
             <article>
+                <h3>Why I Love Camping</h3>
                 <p>
                     Camping slows life down. I love the calm: the fire, the stars from a hammock, 
                     and the comfort of a warm bag on a cold night. It's hands-on-fishing, whittling, 
@@ -421,10 +494,13 @@
                     src="images/GPTGeneratedWhy.png" 
                     alt="Hammock between pine trees beneath a starry sky, soft lantern light nearby and a faint campfire glowing in the background." 
                 />
-                <figcaption>My favorite ending: fading fire, bright stars, quiet.</figcaption>
-                <p class="ai-note"><em>AI prompt summary:</em> hammock under a clear starry sky with a faint campfire glow, focusing on calm and reflection.</p>
+                <figcaption>
+                    My favorite ending: fading fire, bright stars, quiet.
+                    <p class="ai-note"><em>AI prompt summary:</em> hammock under a clear starry sky with a faint campfire glow, focusing on calm and reflection.</p>
+                </figcaption>
             </figure>
             <article>
+                <h3>The Outcome</h3>
                 <p>
                     <strong>Outcome:</strong> real rest, good food, better stories, and a deeper love for wild places.
                 </p>
@@ -435,6 +511,7 @@
         <section id="ai">
             <h2>AI Prompts</h2>
             <article>
+                <h3>How I Used AI</h3>
                 <p>
                     I used AI tools to assist with both image generation and technical guidance while developing this website. 
                     The following summarizes how each prompt or AI interaction contributed to the project’s final design.
@@ -453,7 +530,7 @@
                             <td><strong>What</strong></td>
                             <td>AI-generated image</td>
                             <td>
-                                Flat-lay of essential camping gear arranged neatly on a canvas tarp: tent bag, sleeping bag and pad, headlamp, first-aid kit, compact stove, 
+                                Flat layout of essential camping gear arranged neatly on a canvas tarp: tent bag, sleeping bag and pad, headlamp, first-aid kit, compact stove, 
                                 pot, water filter, map and compass, knife, gloves. Warm lantern light from one side, soft shadows, earthy colors (pine/canvas/clay). 
                                 Photoreal, 50 mm look.
                             </td>
@@ -502,29 +579,22 @@
                     AI tools also assisted with refining my color palette, creating accessible CSS contrast, 
                     and improving JavaScript logic for section switching, as well as most methods, form handling, and small accessibility details. 
                     The layout, structure, written content, and overall creative direction were my own work.
+                    Also note: For finalizing the project, I'd asked GPT-5 to simplify the CSS and remove all redundancies in previous code. 
                 </p>
             </article>
         </section>
     </main>
     <footer>
-        <!--
-            <a href="https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fwebpages.charlotte.edu%2Fngustaf1%2Fitis3135%2Fhobby%2F">HTML Validation</a>
-            <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwebpages.charlotte.edu%2Fngustaf1%2Fitis3135%2Fhobby%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">CSS Validator</a>
-            <a href="https://wave.webaim.org/report#/https%3A%2F%2Fwebpages.charlotte.edu%2Fngustaf1%2Fitis3135%2Fhobby%2F">Accessibility Check</a>
-        -->
+        <p>Designed By: <a href="/itis3135/ndgllc.co/index.html">NDG LLC</a></p>
 
-        <p>Designed By <a href="/itis3135/ndgllc.co/index.html">NDG LLC</a></p>
+        <p class="validation-label">Validation Links:</p>
         <nav>
-            <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fwebpages.charlotte.edu%2Fngustaf1%2Fitis3135%2Fhobby%2F">HTML Validation</a>
-            
-            <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwebpages.charlotte.edu%2Fngustaf1%2Fitis3135%2Fhobby%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">CSS Validator</a>
-            <p>
-                <a href="https://jigsaw.w3.org/css-validator/check/referer">
-                    <img style="border:0;width:88px;height:31px"
-                        src="https://jigsaw.w3.org/css-validator/images/vcss"
-                        alt="Valid CSS!" />
-                </a>
-            </p>
+            <a class="pill" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwebpages.charlotte.edu%2Fngustaf1%2Fitis3135%2Fhobby%2F" target="_blank" rel="noopener noreferrer">
+                <span class="pill-left">W3C</span><span class="pill-right">HTML ✓</span>
+            </a>
+            <a class="pill" href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener noreferrer">
+                <span class="pill-left">W3C</span><span class="pill-right">CSS ✓</span>
+            </a>
         </nav>
     </footer>
     <script src="scripts/default.js"></script>
