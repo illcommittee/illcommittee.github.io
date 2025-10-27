@@ -72,14 +72,7 @@
   <footer>
     <div data-include="components/footer.html"></div>
   </footer>
-  <script>
-    window.addEventListener('load', function () {
-      const htmlA = document.getElementById('validation_link_html');
-      const cssA  = document.getElementById('validation_link_css');
-      if (htmlA) htmlA.href = 'https://validator.w3.org/nu/?doc=' + encodeURIComponent(location.href);
-      if (cssA)  cssA.href  = 'https://jigsaw.w3.org/css-validator/validator?uri=' + encodeURIComponent(location.href);
-    });
-  </script>
+  
   <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>

@@ -101,3 +101,35 @@ header nav a {
     header nav a { padding: .2rem .4rem; }
     .personal_photo { max-width: 160px; }
 }
+
+footer nav .pill{
+    border: none;
+    border-radius: 6px;
+    overflow: hidden;
+    font-weight: 600;
+    color: var(--color5);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+}
+footer nav .pill-left{ 
+    background:#fff;
+    color:#1a57a8;
+    padding:.25rem .45rem;
+}
+footer nav .pill-right{ 
+    background:#f2c464;
+    color:#2b2b2b;
+    padding:.25rem .55rem;
+}
+footer nav .pill:hover{ 
+    border-color:var(--color1);
+}
+footer .validation-label{
+    display:inline-flex;
+    align-items:center;
+    margin:0 .5rem .2rem 0;
+    font-weight:600;
+    color:var(--color5);
+    opacity:.85;
+    font-size:.9rem;
+}
