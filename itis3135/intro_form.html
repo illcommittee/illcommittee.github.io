@@ -3,18 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Introduction Form</title>
+    <link rel="stylesheet" href="styles/default.css">
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="intro-form">
     <header>
         <div data-include="components/header.html"></div>
     </header>
+    <main class="container">
+        <section id="formBlock">
+            <h2 id="pageH2">Introduction Form</h2>
+            <h1 class="text-left">Build Your Own Introduction</h1>
+            <h3>Please submit the form below.</h3>
+            <form id="form" novalidate>
 
+                <fieldset id="nameInfo">
+                    <legend>Name Information</legend>
+
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Put your first name here" value="Nathaniel" required>
+
+                    <label for="middleName">Middle Name (optional)</label>
+                    <input type="text" id="middleName" name="middleName" value="D">
+
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" value="Gustafson" required>
+
+                    <label for="preferredName">Nickname/Preferred Name (optional)</label>
+                    <input type="text" id="preferredName" name="preferredName" value="Nate">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Acknowledgements</legend>
+
+                    <label for="ackStatement">Acknowledgment Statement</label>
+                    <textarea id="ackStatement" name="ackStatement" rows="3" placeholder="Acknowledge this will be public and sign with your initials after the dash." required>I understand that this is a public document and that I will not be posting anything I’m uncomfortable with being online - NG</textarea>
+                    <p class="hint">(Sign after the " - " characters with your initials.)</p>
+
+                    <label for="ackDate">Acknowledgement Date</label>
+                    <input 
+                        type="text" 
+                        id="ackDate" 
+                        name="ackDate" 
+                        required 
+                        pattern="\d{4}-\d{2}-\d{2}" 
+                        placeholder="YYYY-MM-DD">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Mascot & Divider</legend>
+                    <label for="mascotAdjective">Mascot Adjective</label>
+                    <input type="text" id="mascotAdjective" name="mascotAdjective" value="Notorious" required>
+
+                    <label for="mascotAnimal">Mascot Animal</label>
+                    <input type="text" id="mascotAnimal" name="mascotAnimal" value="Gecko" required>
+
+                    <label for="divider">Divider Choice</label>
+                    <select name="divider" id="divider">
+                        <option value="" selected disabled hidden>Select a divider</option>
+                        <option value=" | "> | </option>
+                        <option value=" || "> || </option>
+                        <option value=" ~ "> ~ </option>
+                        <option value=" 🌟 "> 🌟 </option>
+                        <option value=" 🌋 "> 🌋 </option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Photo</legend>
+                    <label for="picture">Insert A Photo</label>
+                    <input type="file" name="picture" id="picture" accept="image/*">
+                    <figure>
+                        <img id="photoPreview" class="form_photo" src="images/me.png" alt="Default profile image">
+                    </figure>
+                    <label for="picCaption">Include A Caption:</label>
+                    <input type="text" name="picCaption" id="picCaption" value="A photo of me at the Biltmore Estate gardens.">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Please Include A Personal Statement</legend>
+                    <label for="personalStatement">Personal Statement</label>
+                    <textarea id="personalStatement" name="personalStatement" rows="4" placeholder="A few sentences that summarize you..." required>I'm a transfer student in Computer Science with a concentration in Cyber Security. I balance part-time work with school and love building things in CS.</textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Seven Bullets</legend>
+                    <label for="bullet1">Personal Background</label>
+                    <input 
+                        id="bullet1" 
+                        name="bullets" 
+                        type="text" 
+                        placeholder="Where you're from, path to UNCC" 
+                        required
+                        value="Born in Akron, raised in Monroe NC; associate's at SPCC transferred to UNCC."
+                    />
+                    <label for="bullet2">Professional Background</label>
+                    <input 
+                        id="bullet2" 
+                        name="bullets" 
+                        type="text" 
+                        placeholder="Work Experience"
+                        required
+                        value="Chick-fil-A since 2021; Team Leader last two years."
+                    />
+                    <label for="bullet3">Academic Background</label>
+                    <input
+                        id="bullet3"
+                        name="bullets"
+                        type="text"
+                        placeholder="Major, concentration"
+                        required
+                        value="MS CS, concentration in Cybersecurity"
+                    />
+                    <label for="bullet4">Primary Computer</label>
+                    <input
+                        id="bullet4"
+                        name="bullets"
+                        type="text"
+                        placeholder="Your main device"
+                        required
+                        value="Custom Windows 11 desktop I use for development and personal use"
+                    />
+                    <label for="bullet5">Current Interests</label>
+                    <input
+                        id="bullet5"
+                        name="bullets"
+                        type="text"
+                        placeholder="What you're excited about"
+                        required
+                        value="Deep dive into security tools and systems this semester."
+                    />
+                    <label for="bullet6">Goals</label>
+                    <input
+                        id="bullet6"
+                        name="bullets"
+                        type="text"
+                        placeholder="Short/long-term goals"
+                        required
+                        value="Break into cybersecurity; strengthen software engineering."
+                    />
+                    <label for="bullet7">Fun Facts</label>
+                    <input
+                        id="bullet7"
+                        name="bullets"
+                        type="text"
+                        placeholder="Something memorable"
+                        required
+                        value="Most projects here ride under the Notorious Gecko brand."
+                    />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Current Courses</legend>
+                    <p class="hint">Department, number, name, and a short reason. Use "+ Add Course" to add rows.</p>
+                    <section id="courses" aria-label="Courses"></section>
+                    <button type="button" id="addCourseBtn">+ Add Course</button>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Favorite Quote</legend>
+                    <label for="quote">Quote</label>
+                    <textarea id="quote" name="quote" rows="2" placeholder="Your favorite quote" required>Believe you can, and you’re halfway there.</textarea>
+
+                    <label for="quoteAuthor">Author</label>
+                    <input id="quoteAuthor" name="quoteAuthor" type="text" placeholder="Quote Author" value="Theodore Roosevelt" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Extras (Optional)</legend>
+                    <label for="funnyThing">Funny thing</label>
+                    <input id="funnyThing" name="funnyThing" type="text" placeholder="Something funny...">
+
+                    <label for="shareThing">Something I would like to share</label>
+                    <input id="shareThing" name="shareThing" type="text" placeholder="Something you'd like to share...">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Five Links</legend>
+                    <ul>
+                        <li>
+                            <label for="linkLabel0">Link 1 Label</label>
+                            <input id="linkLabel0" name="linkLabel" type="text" value="LinkedIn" required>
+                            <label for="linkUrl0">Link 1 URL</label>
+                            <input id="linkUrl0" name="linkUrl" type="url" value="https://www.linkedin.com/in/nathaniel-gustafson/" required>
+                        </li>
+                        <li>
+                            <label for="linkLabel1">Link 2 Label</label>
+                            <input id="linkLabel1" name="linkLabel" type="text" value="GitHub" required>
+                            <label for="linkUrl1">Link 2 URL</label>
+                            <input id="linkUrl1" name="linkUrl" type="url" value="https://github.com/illcommittee" required>
+                        </li>
+                        <li>
+                            <label for="linkLabel2">Link 3 Label</label>
+                            <input id="linkLabel2" name="linkLabel" type="text" value="freeCodeCamp" required>
+                            <label for="linkUrl2">Link 3 URL</label>
+                            <input id="linkUrl2" name="linkUrl" type="url" value="https://www.freecodecamp.org/sepiksprime" required>
+                        </li>
+                        <li>
+                            <label for="linkLabel3">Link 4 Label</label>
+                            <input id="linkLabel3" name="linkLabel" type="text" value="Codecademy" required>
+                            <label for="linkUrl3">Link 4 URL</label>
+                            <input id="linkUrl3" name="linkUrl" type="url" value="https://www.codecademy.com/profiles/NotoriousGecko" required>
+                        </li>
+                        <li>
+                            <label for="linkLabel4">Link 5 Label</label>
+                            <input id="linkLabel4" name="linkLabel" type="text" value="UNCC Profile" required>
+                            <label for="linkUrl4">Link 5 URL</label>
+                            <input id="linkUrl4" name="linkUrl" type="url" value="https://webpages.charlotte.edu/ngustaf1/" required>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <button type="submit">Submit</button>
+                <button type="reset" id="resetBtn">Reset</button>
+                <button type="button" id="clearBtn">Clear</button>
+            </form>
+        </section>
+        
+        <!--Introduction Output-->
+        <h2>Introduction</h2>
+        <section id="resultArea" class="hidden">
+            <h3 id="formOutputData">Results Will Show Here</h3>
+        </section>
+    </main>
+    
     <footer>
         <div data-include="components/footer.html"></div>
     </footer>
-
-
     <script src="scripts/HTMLInclude.min.js"></script>
     <script src="scripts/introduction.js"></script>
 </body>
