@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 0);
     });
 
-    // ---- photo preview & state ----
+    // photo preview & state
     picInput.addEventListener('change', () => {
         const f = picInput.files[0];
         if (!f) return;
