@@ -400,3 +400,9 @@ footer .validation-label{
 .text-left{
     text-align: left; 
 }
+
+main p, main ul, main ol, blockquote{
+    max-width: 70ch;
+    margin-inline: auto;
+}
+
