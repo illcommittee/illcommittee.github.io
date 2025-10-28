@@ -100,7 +100,6 @@ header nav{
 header nav::-webkit-scrollbar { display: none; }
 header nav { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* links */
 header nav a{
     display: inline-block;
     font-weight: 500;
