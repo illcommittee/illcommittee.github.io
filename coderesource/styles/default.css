@@ -59,6 +59,7 @@ img{
     display:grid; 
     gap:var(--gap) 
 }
+
 @media (min-width:900px){
     .col-6{ grid-template-columns:repeat(2,1fr) } 
 }
