@@ -55,13 +55,13 @@ img{
   padding:var(--pad); 
   box-shadow:var(--shadow);
 }
-.grid{ 
-    display:grid; 
-    gap:var(--gap) 
+.grid{
+  display:grid;
+  gap:var(--gap);
 }
 
 @media (min-width:900px){
-    .col-6{ grid-template-columns:repeat(2,1fr) } 
+  .col-6{ grid-template-columns:repeat(2,1fr) }
 }
 
 /* header / nav */
@@ -100,26 +100,27 @@ img{
 .muted{ 
     color:var(--fg-1) 
 }
+/* keep your existing .btn and :hover rules */
 .btn{
-    display:inline-flex; 
-    align-items:center; 
-    justify-content:center; 
-    gap:.5rem;
-    padding:.55rem .9rem; 
-    border-radius:12px; 
-    border:var(--border);
-    background:#0f1722; 
-    color:var(--fg-0); 
-    cursor:pointer
+  display:inline-flex; 
+  align-items:center; 
+  justify-content:center; 
+  gap:.5rem;
+  padding:.55rem .9rem; 
+  border-radius:12px; 
+  border:var(--border);
+  background:#0f1722; 
+  color:var(--fg-0); 
+  cursor:pointer;
 }
 .btn:hover{ 
     background:#121c2a 
 }
-.btn.brand{ 
-    background:linear-gradient(135deg, #0ea5e9, #22d3ee); 
-    color:#001017; 
-    border:none; 
-    font-weight:700 
+.btn-brand{
+  background:linear-gradient(135deg,#0ea5e9,#22d3ee);
+  color:#001017;
+  border:none;
+  font-weight:700;
 }
 .list{ 
     display:grid; 
@@ -139,14 +140,6 @@ img{
 :focus-visible{ 
     outline: 2px solid var(--brand); 
     outline-offset: 2px 
-}
-
-/* active link via body[data-page] */
-body[data-page="home"]     .nav a[href$="index.html"],
-body[data-page="goals"]    .nav a[href$="goals.html"],
-body[data-page="resources"] .nav a[href$="resources.html"],
-body[data-page="projects"] .nav a[href$="projects.html"]{
-  background:#111b29;
 }
 
 /* active link highlight (Ill Committee version) */
