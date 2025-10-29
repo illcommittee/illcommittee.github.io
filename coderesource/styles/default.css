@@ -55,15 +55,18 @@ img{
   padding:var(--pad); 
   box-shadow:var(--shadow);
 }
-.grid{
-  display:grid;
-  gap:var(--gap);
+
+.grid { 
+  display: grid; 
+  gap: var(--gap); 
 }
 
-@media (min-width:900px){
-  .col-6{ grid-template-columns:repeat(2,1fr) }
+@media (min-width: 900px) {
+  .col-6 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
 /* header / nav */
 .site-header{ 
     display:flex; 
