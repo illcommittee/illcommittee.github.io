@@ -1,67 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Illest Resources</title>
-  <link rel="stylesheet" href="styles/default.css">
-  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Illest Resources</title>
+    <link rel="stylesheet" href="styles/default.css" />
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <header>
-    <div data-include="components/header.html"></div>
-  </header>
-  
-  <main>
+<body data-page="resources">
+    <header class="site-header container">
+        <div data-include="components/header.html"></div>
+    </header>
 
-    <h2>General</h2>
-    <ul>
-        <li><a href="https://app.daily.dev/">Daily.dev</a></li>
-    </ul>
+    <main class="container">
+        <!-- Quick Links bar (optional) -->
+        <section class="card" style="margin-bottom:1rem">
+            <h2>Quick Links</h2>
+            <ul>
+            <li><a href="https://account.hackthebox.com/dashboard" target="_blank" rel="noopener"><strong>HackTheBox</strong></a></li>
+            <li><a href="https://tryhackme.com/dashboard" target="_blank" rel="noopener"><strong>TryHackMe</strong></a></li>
+            <li><a href="https://leetcode.com/" target="_blank" rel="noopener">LeetCode</a></li>
+            <li><a href="https://app.daily.dev/" target="_blank" rel="noopener">Daily.dev</a></li>
+            </ul>
+        </section>
 
-    <h2>Learning Resources</h2>
-    <ul>
-        <li><a href="https://leetcode.com/">LeetCode</a></li>
-        <li><a href="https://account.hackthebox.com/dashboard"><strong>HackTheBox - Dashboard</strong></a></li>
-        <li><a href="https://tryhackme.com/dashboard"><strong>TryHackMe - Dashboard</strong></a></li>
-        <li><a href="https://neetcode.io/practice">NeetCode Practice</a></li>
-        <li><a href="https://github.com/topics/cybersecurity">Github - Cybersecurity</a></li>
-    </ul>
+        <!-- Your existing sections, just wrapped -->
+        <section class="card">
+            <h2>General</h2>
+            <ul>
+            <li><a href="https://app.daily.dev/" target="_blank" rel="noopener">Daily.dev</a></li>
+            </ul>
+        </section>
 
-    <h2>News</h2>
-    <ul>
-        <li><a href="https://krebsonsecurity.com/"><strong>KrebsonSecurity</strong></a></li>
-        <li><a href="https://www.bleepingcomputer.com/"><strong>Bleeping Computer</strong></a></li>
-        <li><a href="https://www.schneier.com/">Schneier Blog</a></li>
-        <li><a href="https://www.verizon.com/business/resources/">Verizon Business Resources & Insights</a></li>
-        <li><a href="https://unit42.paloaltonetworks.com/tag/threat-assessment/">Unit42 Threat Assessment</a></li>
-        <li><a href="https://unit42.paloaltonetworks.com/?pg=1#reports">Unit42 Reports</a></li>
-        <li><a href="https://unit42.paloaltonetworks.com/?pg=1#threat-brief">Threat Brief</a></li>
-    </ul>
+        <section class="card" style="margin-top:1rem">
+            <h2>Learning Resources</h2>
+            <ul>
+            <li><a href="https://leetcode.com/" target="_blank" rel="noopener">LeetCode</a></li>
+            <li><a href="https://account.hackthebox.com/dashboard" target="_blank" rel="noopener"><strong>HackTheBox — Dashboard</strong></a></li>
+            <li><a href="https://tryhackme.com/dashboard" target="_blank" rel="noopener"><strong>TryHackMe — Dashboard</strong></a></li>
+            <li><a href="https://neetcode.io/practice" target="_blank" rel="noopener">NeetCode Practice</a></li>
+            <li><a href="https://github.com/topics/cybersecurity" target="_blank" rel="noopener">GitHub — Cybersecurity</a></li>
+            </ul>
+        </section>
 
-    <h2>Podcasts</h2>
-    <ul>
-        <li><a href="https://thecyberwire.com/"><strong>Cybersecurity News - Cyberwire</strong></a></li>
-        <li><a href="https://thecyberwire.com/podcasts/hacking-humans">Hacking Humans Podcast</a></li>
-        <li><a href="https://isc.sans.edu/podcast.html">Internet Storm Center </a></li>
-        <li><a href="https://darknetdiaries.com/">Darkest Diaries</a></li>
-        <li><a href="https://www.vice.com/en/tag/cyber-podcast/">Vice Cyber Podcast Tag</a></li>
-    </ul>
-    
-    <h2>Youtube Channels</h2>
-    <ul>
-        <li><a href="https://www.youtube.com/c/Fireship"><strong>Fireship</strong></a></li>
-        <li><a href="https://www.youtube.com/@BroCodez"><strong>BroCode - Full Courses</strong></a></li>
-        <li><a href="https://www.youtube.com/javidx9"><strong>javidx9 - C++</strong></a></li>
-        <li><a href="https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g">Corey Schafer - Python</a></li>
-        <li><a href="https://www.youtube.com/channel/UCsMica-v34Irf9KVTh6xx-g">Microsoft Developer - Python + Extra</a></li>
-    </ul>
+        <section class="card" style="margin-top:1rem">
+            <h2>News</h2>
+            <ul>
+            <li><a href="https://krebsonsecurity.com/" target="_blank" rel="noopener"><strong>KrebsOnSecurity</strong></a></li>
+            <li><a href="https://www.bleepingcomputer.com/" target="_blank" rel="noopener"><strong>BleepingComputer</strong></a></li>
+            <li><a href="https://www.schneier.com/" target="_blank" rel="noopener">Schneier on Security</a></li>
+            <li><a href="https://www.verizon.com/business/resources/" target="_blank" rel="noopener">Verizon Business Resources & Insights</a></li>
+            <li><a href="https://unit42.paloaltonetworks.com/tag/threat-assessment/" target="_blank" rel="noopener">Unit 42 Threat Assessment</a></li>
+            <li><a href="https://unit42.paloaltonetworks.com/?pg=1#reports" target="_blank" rel="noopener">Unit 42 Reports</a></li>
+            <li><a href="https://unit42.paloaltonetworks.com/?pg=1#threat-brief" target="_blank" rel="noopener">Unit 42 Threat Brief</a></li>
+            </ul>
+        </section>
 
-  </main>
+        <section class="card" style="margin-top:1rem">
+            <h2>Podcasts</h2>
+            <ul>
+            <li><a href="https://thecyberwire.com/" target="_blank" rel="noopener"><strong>CyberWire</strong></a></li>
+            <li><a href="https://thecyberwire.com/podcasts/hacking-humans" target="_blank" rel="noopener">Hacking Humans</a></li>
+            <li><a href="https://isc.sans.edu/podcast.html" target="_blank" rel="noopener">SANS Internet Storm Center</a></li>
+            <li><a href="https://darknetdiaries.com/" target="_blank" rel="noopener">Darknet Diaries</a></li>
+            <li><a href="https://www.vice.com/en/tag/cyber-podcast/" target="_blank" rel="noopener">VICE Cyber Podcast (tag)</a></li>
+            </ul>
+        </section>
 
-  <footer>
-    <div data-include="components/footer.html"></div>
-  </footer>
-  <script src="scripts/HTMLInclude.min.js"></script>
+        <section class="card" style="margin-top:1rem">
+            <h2>YouTube Channels</h2>
+            <ul>
+            <li><a href="https://www.youtube.com/c/Fireship" target="_blank" rel="noopener"><strong>Fireship</strong></a></li>
+            <li><a href="https://www.youtube.com/@BroCodez" target="_blank" rel="noopener"><strong>Bro Code — Full Courses</strong></a></li>
+            <li><a href="https://www.youtube.com/javidx9" target="_blank" rel="noopener"><strong>javidx9 — C++</strong></a></li>
+            <li><a href="https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g" target="_blank" rel="noopener">Corey Schafer — Python</a></li>
+            <li><a href="https://www.youtube.com/channel/UCsMica-v34Irf9KVTh6xx-g" target="_blank" rel="noopener">Microsoft Developer</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="container" style="margin-top:1rem">
+        <div data-include="components/footer.html"></div>
+    </footer>
+    <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>

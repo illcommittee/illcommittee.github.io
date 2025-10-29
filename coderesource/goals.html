@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Illest Goals</title>
-  <link rel="stylesheet" href="styles/default.css">
-  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Illest Goals</title>
+    <link rel="stylesheet" href="styles/default.css" />
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <header>
-    <div data-include="components/header.html"></div>
-  </header>
-  
-  <main>
-    <h2>Goals</h2>
-    <ul>
-        <li>Cybersecurity - Pen Tester, DevSecOps, Security Engineer, Incident Manager, Digital Forensics, Cybersecurity Analyst</li>
-        <li>Relearn Skills - Java, Data Structures, </li>
-        <li>Look into red team, pen testing, game hacking, Nmap, SQLMap, Bloodhound, infosec House</li>
-        <li>Install linux dispo on a device</li>
-        <li>Homelab setup / Server basics</li>
-        <li>HackTheBox Progress</li>
-        <li>LeetCode Progress</li>
-        <li>TryHackMe Progress</li>
-    </ul>
-  </main>
+<body data-page="goals">
+    <header class="site-header container">
+        <div data-include="components/header.html"></div>
+    </header>
 
-  <footer>
+    <main class="container">
+        <h2>Goals</h2>
+
+        <section class="grid col-6">
+        <article class="card">
+            <h2>Weekly Goals</h2>
+            <div class="list">
+                <div class="item"><span>3 × 25-min focus sessions</span><button class="btn" type="button">Mark</button></div>
+                <div class="item"><span>1 PortSwigger Academy lab</span><button class="btn" type="button">Mark</button></div>
+                <div class="item"><span>Read 5 pages (Networking/HTTP)</span><button class="btn" type="button">Mark</button></div>
+            </div>
+            <p class="muted" style="margin-top:.5rem">No storage yet; just a simple checklist for v0.1.</p>
+        </article>
+
+        <article class="card">
+            <h2>Dopamine Menu</h2>
+            <ul class="list">
+                <li class="item"><span>Fix one CSS nit</span><button class="btn" type="button">Done</button></li>
+                <li class="item"><span>TryHackMe 15–20 min</span><button class="btn" type="button">Done</button></li>
+                <li class="item"><span>Wireshark: follow one TCP handshake</span><button class="btn" type="button">Done</button></li>
+            </ul>
+        </article>
+        </section>
+
+        <section class="grid" style="margin-top:1rem">
+            <article class="card">
+                <h2>Tracks & TODOs</h2>
+                <ul>
+                    <li><strong>Cybersecurity roles</strong> — Pen Tester, DevSecOps, Security Engineer, Incident Manager, Digital Forensics, Cybersecurity Analyst</li>
+                    <li><strong>Relearn skills</strong> — Java, Data Structures</li>
+                    <li><strong>Explore tools</strong> — red team / pen testing / game hacking, Nmap, SQLMap, BloodHound, InfoSec House</li>
+                    <li><strong>Linux</strong> — Install a Linux distro on a device</li>
+                    <li><strong>Homelab</strong> — Server basics / homelab setup</li>
+                    <li><strong>Progress boards</strong> — HackTheBox, LeetCode, TryHackMe</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+  <footer class="container" style="margin-top:1rem">
     <div data-include="components/footer.html"></div>
   </footer>
   <script src="scripts/HTMLInclude.min.js"></script>
