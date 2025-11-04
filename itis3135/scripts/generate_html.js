@@ -1,67 +1,90 @@
-// scripts/generate_html.js
-document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("generateHtmlBtn");
+function escapeHtml(s) {
+    s = (s === undefined || s === null) ? "" : String(s);
+    return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function getVal(id) {
+    var el = document.getElementById(id);
+    return el && el.value ? el.value.trim() : "";
+}
+document.addEventListener("DOMContentLoaded", function () {
+    var btn = document.getElementById("generateHtmlBtn");
     if (!btn) return;
-
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", function () {
         // 1) Read the form values (only what already exists)
-        const v = (id) => {
-            const el = document.getElementById(id);
-            return el && el.value ? el.value.trim() : "";
-        };
+        var firstName = getVal("firstName");
+        var middleName = getVal("middleName");
+        var lastName = getVal("lastName");
+        var preferredName = getVal("preferredName");
 
-        const firstName = v("firstName");
-        const middleName = v("middleName");
-        const lastName = v("lastName");
-        const preferredName = v("preferredName");
+        var ackStatement = getVal("ackStatement");
+        var ackDate = getVal("ackDate");
 
-        const ackStatement = v("ackStatement");
-        const ackDate = v("ackDate");
+        var mascotAdj = getVal("mascotAdjective");
+        var mascotAnimal = getVal("mascotAnimal");
 
-        const mascotAdj = v("mascotAdjective");
-        const mascotAnimal = v("mascotAnimal");
-        const divider = document.getElementById("divider")?.value || "";
+        var dividerEl = document.getElementById("divider");
+        var divider = (dividerEl && dividerEl.value) ? dividerEl.value : "";
 
-        const photo = document.getElementById("photoPreview");
-        const photoSrc = photo ? (photo.currentSrc || photo.src || "") : "";
-        const photoAlt = photo ? (photo.getAttribute("alt") || "Profile photo") : "Profile photo";
-        const picCaption = v("picCaption");
+        var photo = document.getElementById("photoPreview");
+        var photoSrc = photo ? (photo.currentSrc || photo.src || "") : "";
+        var photoAlt = photo ? (photo.getAttribute("alt") || "Profile photo") : "Profile photo";
+        var picCaption = getVal("picCaption");
 
-        const personalStatement = v("personalStatement");
+        var personalStatement = getVal("personalStatement");
 
-        const bullets = Array.from(document.querySelectorAll('input[name="bullets"]'))
-            .map(i => i.value.trim())
-            .filter(Boolean);
+        // bullets
+        var bulletsNodes = document.querySelectorAll('input[name="bullets"]');
+        var bullets = Array.prototype.map.call(bulletsNodes, function (i) {
+            return (i.value || "").trim();
+        }).filter(function (s) { return !!s; });
 
         // Links (fixed 5)
-        const links = [];
-        for (let i = 0; i < 5; i++) {
-            const label = v("linkLabel" + i);
-            const url = v("linkUrl" + i);
-            if (label && url) links.push({ label, url });
+        var links = [];
+        for (var i = 0; i < 5; i++) {
+            var lbl = getVal("linkLabel" + i);
+            var url = getVal("linkUrl" + i);
+            if (lbl && url) links.push({ label: lbl, url: url });
         }
-    
-        const quote = v("quote");
-        const quoteAuthor = v("quoteAuthor");
+        
+        var quote = getVal("quote");
+        var quoteAuthor = getVal("quoteAuthor");
 
-        const funnyThing = v("funnyThing");
-        const shareThing = v("shareThing");
+        var funnyThing = getVal("funnyThing");
+        var shareThing = getVal("shareThing");
 
-        // 2) Build a simple, clean HTML section (copy-paste ready)
-        const fullName = [firstName, middleName, lastName].filter(Boolean).join(" ");
-        const displayName = preferredName ? `${preferredName} (${fullName})` : fullName;
+        //Built HTML section
+        var nameParts = [];
+        if (firstName) nameParts.push(firstName);
+        if (middleName) nameParts.push(middleName);
+        if (lastName) nameParts.push(lastName);
+        var fullName = nameParts.join(" ");
+        var displayName = preferredName ? (preferredName + " (" + fullName + ")") : fullName;
 
-        const html = `
-        <!-- BEGIN: Introduction -->
+        var bulletsHtml = bullets.map(function (b) {
+            return "<li>" + escapeHtml(b) + "</li>";
+        }).join("");
+
+        var linksHtml = links.map(function (l) {
+        return '<li><a href="' + escapeHtml(l.url) + '" target="_blank" rel="noopener">' + escapeHtml(l.label) + "</a></li>";
+        }).join("");
+
+        var html = 
+        `<!-- BEGIN: Introduction -->
         <section class="introduction">
             <h2>${escapeHtml(displayName)}</h2>
-
+            
             <p class="ack">
                 ${escapeHtml(ackStatement)}${ackDate ? ` <time datetime="${escapeHtml(ackDate)}">(${escapeHtml(ackDate)})</time>` : ""}
             </p>
 
             <h3 class="mascot">Mascot: ${escapeHtml(mascotAdj)} ${escapeHtml(mascotAnimal)}</h3>
-                ${divider ? `<div class="divider" aria-hidden="true">${escapeHtml(divider)}</div>` : ""}
+            ${divider ? `<div class="divider" aria-hidden="true">${escapeHtml(divider)}</div>` : ""}
 
             <figure class="profile-photo">
                 <img src="${escapeHtml(photoSrc)}" alt="${escapeHtml(photoAlt)}">
@@ -72,9 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <section class="seven-bullets">
                 <h3>Seven Bullets</h3>
-                    <ul>
-                        ${bullets.map(b => `<li>${escapeHtml(b)}</li>`).join("")}
-                    </ul>
+                <ul>
+                    ${bullets.map(function (b) { return `<li>${escapeHtml(b)}</li>`; }).join("")}
+                </ul>
             </section>
 
             <blockquote class="favorite-quote">
@@ -95,52 +118,43 @@ document.addEventListener("DOMContentLoaded", () => {
             <nav class="links">
                 <h3>Links</h3>
                 <ul>
-                    ${links.map(l => `<li><a href="${escapeHtml(l.url)}" target="_blank" rel="noopener">${escapeHtml(l.label)}</a></li>`).join("")}
-                </ul>
-            </nav>` : ""}
-        </section>
-        <!-- END: Introduction -->`;
+                    ${links.map(function (l) {
+                    return `<li><a href="${escapeHtml(l.url)}" target="_blank" rel="noopener">${escapeHtml(l.label)}</a></li>`;
+                }).join("")}
+            </ul>
+        </nav>` : ""}
+    </section>
+    <!-- END: Introduction -->`;
 
         // 3) Replace the form with a highlighted code block + update H2
-        const form = document.getElementById("form");
-        const formBlock = document.getElementById("formBlock");
-        const pageH2 = document.getElementById("pageH2");
+        var form = document.getElementById("form");
+        var formBlock = document.getElementById("formBlock");
+        var pageH2 = document.getElementById("pageH2");
         if (!form || !formBlock) return;
 
-        form.remove();
+        form.parentNode.removeChild(form);
         if (pageH2) pageH2.textContent = "Introduction HTML";
 
-        const wrapper = document.createElement("section");
+        var wrapper = document.createElement("section");
         wrapper.innerHTML = `
-            <p class="hint">Select all and copy this HTML:</p>
-            <pre><code class="language-html"></code></pre>
-            <button id="backToFormBtn" class="back-btn">Back to Form</button>
+        <p class="hint">Select all and copy this HTML:</p>
+        <pre><code class="language-html"></code></pre>
+        <button id="backToFormBtn" class="back-btn">Back to Form</button>
         `;
         formBlock.appendChild(wrapper);
 
         // Fill in and highlight
-        const codeEl = wrapper.querySelector("code");
+        var codeEl = wrapper.querySelector("code");
         codeEl.textContent = html;
         if (window.hljs) {
-            if (typeof hljs.highlightElement === "function") hljs.highlightElement(codeEl);
-            else if (typeof hljs.highlightAll === "function") hljs.highlightAll();
+            if (typeof window.hljs.highlightElement === "function") window.hljs.highlightElement(codeEl);
+            else if (typeof window.hljs.highlightAll === "function") window.hljs.highlightAll();
         }
 
-        //back button logic
-        const backBtn = wrapper.querySelector("#backToFormBtn");
-        backBtn.addEventListener("click", () => {
-            //recreates form
-            location.reload(); 
+        // Back button: simplest reliable reset
+        var backBtn = wrapper.querySelector("#backToFormBtn");
+        backBtn.addEventListener("click", function () {
+            location.reload();
         });
     });
 });
-
-// tiny escape util (kept inline to stay simple)
-function escapeHtml(s) {
-    return String(s)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#39;");
-}
