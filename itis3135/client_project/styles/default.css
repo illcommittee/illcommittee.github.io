@@ -1,0 +1,108 @@
+:root{
+    --color0:#111827; /* background (charcoal) */
+    --color1:#fde68a; /* accent (warm sand) */
+    --color2:#f59e0b; /* hover/accent */
+    --color3:#e5e7eb; /* light gray lines */
+    --color4:#60a5fa; /* link blue */
+    --color6:#f3f4f6; /* off-white text on dark */
+}
+*{
+    box-sizing: border-box;
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+    background: var(--color0);
+    color: var(--color6);
+    font-family: 'Lato', 'Segoe UI', system-ui, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a{
+    color:var(--color4);
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
+header,.site-header{
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid var(--color3);
+}
+
+.site-header h1{
+    margin: 0 0 .5rem;
+    color: var(--color1);
+    font-size:2rem;
+}
+
+.site-header nav .nav-link{
+    font-weight: 600;
+}
+
+.sep{
+    color: var(--color3);
+    margin: 0 .5rem;
+}
+
+main{
+    max-width: 960px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+footer,.site-footer{
+    padding:1.25rem 1rem 2rem;
+    border-top:1px solid var(--color3);
+}
+
+.external-nav a{
+    display: inline-block;
+    margin:.25rem 0;
+}
+.validation-label{
+    margin:.75rem 0 .25rem;
+    font-weight: 600;
+}
+a:focus-visible { 
+    outline: 2px solid var(--color1); 
+    outline-offset: 2px; 
+    text-decoration: none; 
+}
+
+/*Pills / Buttons*/
+.pill{
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color3);
+    border-radius:999px;
+    overflow: hidden;
+    margin-right: .5rem;
+}
+.pill-left,.pill-right{
+    padding:.25rem .5rem;
+}
+.pill-left{
+    background:#fff;
+    color: #111;
+}
+.pill-right{
+    background: var(--color1);
+    color: #111;
+    font-weight: 700;
+}
+.site-header nav a + a::before, .external-nav a + a::before { 
+    content: "||"; 
+    color: var(--color3); 
+    margin: 0 .5rem; 
+}
+
+.pill:focus-visible { 
+    outline: 2px solid var(--color1); 
+    outline-offset: 2px; 
+}
+.site-header nav a, .external-nav a { 
+    padding: 2px 0; 
+}

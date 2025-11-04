@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Overview | Deliverr Trucking LLC</title>
+  <link rel="stylesheet" href="styles/default.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div data-include="components/header.html"></div>
+  </header>
+
+  <main>
+    <section id="project-overview">
+      <h2>1) Project Overview</h2>
+      <p><strong>Application/Purpose: </strong>Build a professional website for <strong>Deliverr Trucking LLC</strong> to promote its logistics services, highlight past projects, and make it easy for potential clients to contact the business for quotes</p>
+      <p><strong>Intended Users: </strong>Logistics partners, freight brokers, and potential clients looking for dependable trucking services in the Southeast.</p>
+      <p><strong>Overview of Content: </strong>The website will include an About page, Services page, Work Showcase (portfolio), and Contact form with dynamic interactivity using JavaScript and jQuery.</p>
+    </section>
+
+    <section id="client-info">
+      <h2>2) Client Information</h2>
+      <ul>
+        <li><strong>Client Name:</strong> Juan Contreras</li>
+        <li><strong>Organization:</strong> Deliverr Trucking LLC</li>
+        <li><strong>Email:</strong> juanc@deliverrtrucking.com</li>
+        <li><strong>Phone:</strong> (980) 579-5553</li>
+        <li><strong>Location:</strong> Charlotte, NC</li>
+      </ul>
+      <p class="small">Replace private details with [private] if not for public display.</p>
+    </section>
+
+    <section id="wireframe-sitemap">
+      <h2>3) Wireframe & 4) Site Map</h2>
+      <figure>
+        <img src="images/wireframe-placeholder.png" alt="wireframe placeholder" style="max-width:100%; height:auto";>
+        <figcaption>Wireframe created in draw.io - link will be here once complete.</figcaption>
+      </figure>
+      <figure>
+        <img src="image/sitemap-placeholder.png" alt="Sitemap placeholder" style="max-width: 100%; height:auto;">
+        <figcaption>Site map created in draw.io - linke will be here once complete.</figcaption>
+      </figure>
+    </section>
+
+    <section id="requirements">
+      <h2>5) Requirements Checklist</h2>
+      <ul>
+        <li>At least 5 pages with clear navigation.</li>
+        <li>Consistent component header and footer using HTML includes.</li>
+        <li>Responsive design styled through <code>styles/default.css</code>.</li>
+        <li>Interactivity implemented with JavaScript and jQuery.</li>
+        <li>AJAX functionality for dynamic, read-only content.</li>
+      </ul>
+    </section>
+
+    <section id="page-design">
+      <h2>6) Page Design</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Purpose</th>
+            <th>Audience</th>
+            <th>Content</th>
+            <th>Data Entry</th>
+            <th>Validation</th>
+            <th>Interactions</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Home</td>
+            <td>Provide a professional first impression and navigation overview.</td>
+            <td>All visitors</td>
+            <td>Company intro, highlights, links to key pages.</td>
+            <td>No</td>
+            <td>-</td>
+            <td>Animated hero or rotating banner.</td>
+            <td>Showcase company branding and motto.</td>
+          </tr>
+          <tr>
+            <td>About</td>
+            <td>Share company history, mission, and certifications.</td>
+            <td>Partners and clients</td>
+            <td>Company background, leadership info, photos.</td>
+            <td>No</td>
+            <td>-</td>
+            <td>Expandable timeline or team photo gallery.</td>
+            <td>Requires short bio and company story.</td>
+          </tr>
+          <tr>
+            <td>Work Showcase</td>
+            <td>Highlight completed jobs and logistics routes.</td>
+            <td>Potential clients</td>
+            <td>Images and summaries of past work, client testimonials.</td>
+            <td>No</td>
+            <td>-</td>
+            <td>JS lightbox for gallery images.</td>
+            <td>Use real images from the client if possible.</td>
+          </tr>
+          <tr>
+            <td>Services</td>
+            <td>Describe hauling and transport options.</td>
+            <td>Shippers and brokers</td>
+            <td>Service cards with icons and short descriptions.</td>
+            <td>No</td>
+            <td>-</td>
+            <td>jQuery accordion for FAQs.</td>
+            <td>Confirm service types with client.</td>
+          </tr>
+          <tr>
+            <td>Contact</td>
+            <td>Allow visitors to reach out directly.</td>
+            <td>All visitors</td>
+            <td>Contact form, map embed, and quick contact info.</td>
+            <td>Yes</td>
+            <td>Required: name, email, message.</td>
+            <td>Form validation and AJAX send via Formspree.</td>
+            <td>Include fallback mailto link.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="dynamic">
+      <h2>7) Dynamic Functionality</h2>
+      <ul>
+        <li><strong>Gallery Lightbox (Work Showcase)</strong> - JavaScript-based photo expansion with captions.</li>
+        <li><strong>FAQ Accordion (Services)</strong> - jQuery UI accordion for quick answers.</li>
+        <li><strong>Contact Form Validation (Contact)</strong> - HTML5 + JavaScript form checks and AJAX submission.</li>
+        <li><strong>JSON Fetch (Home)</strong> - Load a local metrics.json file to display company statistics.</li>
+      </ul>
+    </section>
+
+    <section id="next-steps">
+      <h2>Next Steps</h2>
+      <ol>
+        <li>Confirm Deliverr Trucking LLC services and service areas.</li>
+        <li>Gather branding materials (logo, colors, photos).</li>
+        <li>Create and embed wireframe and sitemap images/links.</li>
+        <li>Collect approved contact info and testimonial quotes.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div data-include="components/footer.html"></div>
+  </footer>
+  <script src="scripts/HTMLInclude.min.js"></script>
+</body>
+</html>
