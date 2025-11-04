@@ -106,3 +106,49 @@ a:focus-visible {
 .site-header nav a, .external-nav a { 
     padding: 2px 0; 
 }
+figure img{
+    max-width: 100%;
+    height: auto;
+}
+figcaption{
+    margin-top: .25rem;
+    opacity: .9;
+}
+
+form{
+    display: grid;
+    gap: 1rem;
+}
+fieldset{
+    border: 1px solid var(--color3);
+    border-radius: 12px;
+    padding: 1rem;
+}
+legend{
+    border: 1px solid var(--color1);
+    font-weight: 700;
+    border-radius: 100px;
+}
+label{
+    display: grid;
+    gap: .35rem;
+}
+input, select, textarea, button{
+    font: inherit;
+    padding: .6rem .7rem;
+    border: 1px solid var(--color3);
+    border-radius: .5rem;
+    background: #0f172a10;
+    color: var(--color6);
+}
+input:invalid, select:invalid, textarea:invalid{
+    outline: 1px dashed #ef4444;
+}
+.form-actions{
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+#formStatus{
+    min-height: 1.2em;
+}
