@@ -5,7 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btn.addEventListener("click", () => {
         // 1) Read the form values (only what already exists)
-        const v = (id) => (document.getElementById(id)?.value || "").trim();
+        const v = (id) => {
+            const el = document.getElementById(id);
+            return el && el.value ? el.value.trim() : "";
+        };
 
         const firstName = v("firstName");
         const middleName = v("middleName");
