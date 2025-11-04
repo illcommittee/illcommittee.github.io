@@ -405,4 +405,15 @@ main p, main ul, main ol, blockquote{
     max-width: 70ch;
     margin-inline: auto;
 }
-
+.back-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--color1, #f59e0b);
+    color: var(--color7, #0f0f10);
+    border: none;
+    border-radius: var(--radius-sm, 6px);
+    cursor: pointer;
+}
+.back-btn:hover {
+    opacity: 0.9;
+}
