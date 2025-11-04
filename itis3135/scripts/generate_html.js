@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var divider = (dividerEl && dividerEl.value) ? dividerEl.value : "";
 
         var photo = document.getElementById("photoPreview");
-        var photoSrc = photo ? (photo.currentSrc || photo.src || "") : "";
+        var photoSrc = photo ? (photo.getAttribute("src") || photo.src || "") : "";
         var photoAlt = photo ? (photo.getAttribute("alt") || "Profile photo") : "Profile photo";
         var picCaption = getVal("picCaption");
 
@@ -57,6 +57,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var funnyThing = getVal("funnyThing");
         var shareThing = getVal("shareThing");
+
+        var courseRows = document.querySelectorAll('#courses .course-row');
+        var coursesHtml = "";
+        if (courseRows.length) {
+            var items = Array.prototype.map.call(courseRows, function (row) {
+                var inputs = row.querySelectorAll('input');
+                var dept   = inputs[0] ? inputs[0].value.trim() : "";
+                var num    = inputs[1] ? inputs[1].value.trim() : "";
+                var name   = inputs[2] ? inputs[2].value.trim() : "";
+                var reason = inputs[3] ? inputs[3].value.trim() : "";
+                var line = "<strong>" + escapeHtml(dept) + " " + escapeHtml(num) + "</strong>";
+                if (name)   line += " — " + escapeHtml(name);
+                if (reason) line += " <em>(" + escapeHtml(reason) + ")</em>";
+                return "<li>" + line + "</li>";
+            }).join("");
+
+            coursesHtml = `
+            <section class="courses">
+                <h3>Current Courses</h3>
+                <ul>
+                    ${items}
+                </ul>
+            </section>`;
+        }
 
         //Built HTML section
         var nameParts = [];
@@ -113,6 +137,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     ${shareThing ? `<li><strong>Something I'd like to share:</strong> ${escapeHtml(shareThing)}</li>` : ""}
                 </ul>
             </section>` : ""}
+
+            ${coursesHtml}
 
             ${links.length ? `
             <nav class="links">
