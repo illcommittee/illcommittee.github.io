@@ -1,154 +1,410 @@
-:root{
-    --color0:#111827; /* background (charcoal) */
-    --color1:#fde68a; /* accent (warm sand) */
-    --color2:#f59e0b; /* hover/accent */
-    --color3:#e5e7eb; /* light gray lines */
-    --color4:#60a5fa; /* link blue */
-    --color6:#f3f4f6; /* off-white text on dark */
-}
-*{
-    box-sizing: border-box;
-}
-
-html,body{
-    margin: 0;
-    padding: 0;
-    background: var(--color0);
-    color: var(--color6);
-    font-family: 'Lato', 'Segoe UI', system-ui, Arial, sans-serif;
-    line-height: 1.6;
+:root {
+  /* Palette: dark charcoal + warm gold/orange + sky blue */
+  --color0: #020617; /* page background */
+  --color1: #facc15; /* primary accent (gold) */
+  --color2: #f97316; /* secondary accent / hover (orange, matches trailers) */
+  --color3: #1f2937; /* borders / lines */
+  --color4: #38bdf8; /* link blue */
+  --color5: #9ca3af; /* muted text */
+  --color6: #e5e7eb; /* main text */
+  --card-bg: #0b1120; /* surface cards */
 }
 
-a{
-    color:var(--color4);
-    text-decoration: none;
-}
-a:hover{
-    text-decoration: none;
+* {
+  box-sizing: border-box;
 }
 
-header,.site-header{
-    padding: 1.25rem 1rem;
-    border-bottom: 1px solid var(--color3);
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color0);
+  color: var(--color6);
+  font-family: 'Lato', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
 }
 
-.site-header h1{
-    margin: 0 0 .5rem;
-    color: var(--color1);
-    font-size:2rem;
+/* ------------------ LAYOUT ------------------ */
+
+body > header,
+body > footer {
+  background: #020617;
+  border-color: var(--color3);
 }
 
-.site-header nav .nav-link{
-    font-weight: 600;
+main {
+  max-width: 1040px;
+  margin: 1.75rem auto 2.5rem;
+  padding: 0 1.25rem;
 }
 
-.sep{
-    color: var(--color3);
-    margin: 0 .5rem;
+section + section {
+  margin-top: 2.5rem;
 }
 
-main{
-    max-width: 960px;
-    margin: 1.5rem auto;
-    padding: 0 1rem;
+/* Optional: generic section card wrapper if you use it later */
+.section-card {
+  background: var(--card-bg);
+  border-radius: 0.9rem;
+  border: 1px solid var(--color3);
+  padding: 1.5rem 1.75rem;
 }
 
-footer,.site-footer{
-    padding:1.25rem 1rem 2rem;
-    border-top:1px solid var(--color3);
+/* ------------------ HEADER / NAV ------------------ */
+
+header,
+.site-header {
+  border-bottom: 1px solid var(--color3);
 }
 
-.external-nav a{
-    display: inline-block;
-    margin:.25rem 0;
-}
-.validation-label{
-    margin:.75rem 0 .25rem;
-    font-weight: 600;
-}
-a:focus-visible { 
-    outline: 2px solid var(--color1); 
-    outline-offset: 2px; 
-    text-decoration: none; 
+.site-header {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-/*Pills / Buttons*/
-.pill{
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid var(--color3);
-    border-radius:999px;
-    overflow: hidden;
-    margin-right: .5rem;
-}
-.pill-left,.pill-right{
-    padding:.25rem .5rem;
-}
-.pill-left{
-    background:#fff;
-    color: #111;
-}
-.pill-right{
-    background: var(--color1);
-    color: #111;
-    font-weight: 700;
-}
-.site-header nav a + a::before, .external-nav a + a::before { 
-    content: "||"; 
-    color: var(--color3); 
-    margin: 0 .5rem; 
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--color1);
 }
 
-.pill:focus-visible { 
-    outline: 2px solid var(--color1); 
-    outline-offset: 2px; 
-}
-.site-header nav a, .external-nav a { 
-    padding: 2px 0; 
-}
-figure img{
-    max-width: 100%;
-    height: auto;
-}
-figcaption{
-    margin-top: .25rem;
-    opacity: .9;
+/* ---------- NAVIGATION (Works With Your <a> + <span> Structure) ---------- */
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .65rem;
 }
 
-form{
-    display: grid;
-    gap: 1rem;
+.nav-list a {
+  color: var(--color6);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-size: .85rem;
+  padding: .15rem 0;
+  position: relative;
 }
-fieldset{
-    border: 1px solid var(--color3);
-    border-radius: 12px;
-    padding: 1rem;
+
+/* Hover underline animation */
+.nav-list a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.15rem;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color1), var(--color2));
+  transition: width 180ms ease;
 }
-legend{
-    border: 1px solid var(--color1);
-    font-weight: 700;
-    border-radius: 100px;
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: var(--color1);
 }
-label{
-    display: grid;
-    gap: .35rem;
+
+.nav-list a:hover::after,
+.nav-list a:focus-visible::after {
+  width: 100%;
 }
-input, select, textarea, button{
-    font: inherit;
-    padding: .6rem .7rem;
-    border: 1px solid var(--color3);
-    border-radius: .5rem;
-    background: #0f172a10;
-    color: var(--color6);
+
+/* Separator spacing (you already have <span class="sep">) */
+.sep {
+  color: var(--color5);
+  font-weight: 300;
+  opacity: .7;
+  padding: 0 .25rem;
 }
-input:invalid, select:invalid, textarea:invalid{
-    outline: 1px dashed #ef4444;
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color1);
 }
-.form-actions{
-    display: flex;
-    align-items: center;
-    gap: .75rem;
+
+/* ------------------ TYPOGRAPHY ------------------ */
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  margin-top: 0;
 }
-#formStatus{
-    min-height: 1.2em;
+
+h1 {
+  font-size: clamp(1.9rem, 3vw, 2.3rem);
+  letter-spacing: 0.03em;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.35rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+p {
+  margin: 0.35rem 0 0.75rem;
+}
+
+.small {
+  font-size: 0.9rem;
+  color: var(--color5);
+}
+
+/* ------------------ LINKS ------------------ */
+
+a {
+  color: var(--color4);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.1rem;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color1), var(--color2));
+  transition: width 160ms ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color1);
+  outline-offset: 2px;
+}
+
+/* Disable extra underline on nav links which already have ::after */
+.nav-list a:hover {
+  color: var(--color1);
+}
+
+/* ------------------ FOOTER ------------------ */
+
+footer,
+.site-footer {
+  border-top: 1px solid var(--color3);
+  padding: 1.25rem 1.25rem 2rem;
+}
+
+.site-footer {
+  max-width: 1040px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  color: var(--color5);
+}
+
+.site-footer p {
+  margin: 0.2rem 0;
+}
+
+/* ------------------ FIGURES / IMAGES ------------------ */
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+  margin-top: 0.25rem;
+  opacity: 0.9;
+}
+
+/* ------------------ GALLERY GRID ------------------ */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+  margin-top: 1.2rem;
+}
+
+/* Card feel for each image */
+.gallery-grid figure {
+  background: var(--card-bg);
+  border-radius: 0.85rem;
+  border: 1px solid var(--color3);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(0);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+/* Image crop + zoom on hover */
+.gallery-grid img {
+  height: 220px;
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.gallery-grid figure:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-grid figure:hover {
+  transform: translateY(-4px);
+  border-color: var(--color2);
+  background: #020617;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+}
+
+.gallery-grid figcaption {
+  padding: 0.75rem 1rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* ------------------ FORMS (Estimate page etc.) ------------------ */
+
+form {
+  display: grid;
+  gap: 1.2rem;
+}
+
+fieldset {
+  border: 1px solid var(--color3);
+  border-radius: 0.9rem;
+  padding: 1rem 1.25rem 1.25rem;
+  background: var(--card-bg);
+}
+
+legend {
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--color1);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #020617;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--color3);
+  border-radius: 0.55rem;
+  background: #020617;
+  color: var(--color6);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color5);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color2);
+  outline-offset: 2px;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+  outline: 1px dashed #ef4444;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(135deg, var(--color1), var(--color2));
+  color: #111827;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    filter 120ms ease,
+    transform 80ms ease,
+    box-shadow 120ms ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#formStatus {
+  min-height: 1.2em;
+  font-size: 0.9rem;
+  color: var(--color5);
+}
+
+/* ------------------ MISC ------------------ */
+
+.external-nav a {
+  display: inline-block;
+  margin: 0.25rem 0;
+}
+
+.validation-label {
+  margin: 0.75rem 0 0.25rem;
+  font-weight: 600;
+}
+
+/* Small tweak for mobiles */
+@media (max-width: 640px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 0.9rem 1.4rem;
+  }
 }
