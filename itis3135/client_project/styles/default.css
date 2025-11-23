@@ -49,7 +49,7 @@ main {
 /* Cards (like gallery figures, form fieldsets) */
 .section-card,
 fieldset,
-.gallery-grid figure {
+.gallery figure {
       background: var(--card-bg);
 }
 
@@ -150,26 +150,28 @@ header,
 
 /* ------------------ TYPOGRAPHY ------------------ */
 
-h1,
-h2,
-h3 {
+h1 {
+    color: var(--color6);
+    font-size: clamp(1.9rem, 3vw, 2.3rem);
+    letter-spacing: 0.03em;
     font-weight: 700;
     margin-top: 0;
 }
 
-h1 {
-    font-size: clamp(1.9rem, 3vw, 2.3rem);
-    letter-spacing: 0.03em;
-}
-
 h2 {
+    color: var(--color6);
     font-size: 1.4rem;
     margin-bottom: 0.35rem;
+    font-weight: 700;
+    margin-top: 0;
 }
 
 h3 {
+    color: var(--color6);
     font-size: 1.1rem;
     margin-bottom: 0.25rem;
+    font-weight: 700;
+    margin-top: 0;
 }
 
 p {
@@ -253,7 +255,7 @@ figcaption {
 
 /* ------------------ GALLERY GRID ------------------ */
 
-.gallery-grid {
+.gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.4rem;
@@ -261,7 +263,7 @@ figcaption {
 }
 
 /* Card feel for each image */
-.gallery-grid figure {
+.gallery figure {
     background: var(--card-bg);
     border-radius: 0.85rem;
     border: 1px solid var(--color3);
@@ -276,24 +278,24 @@ figcaption {
 }
 
 /* Image crop + zoom on hover */
-.gallery-grid img {
+.gallery img {
     height: 220px;
     object-fit: cover;
     transition: transform 240ms ease;
 }
 
-.gallery-grid figure:hover img {
+.gallery figure:hover img {
     transform: scale(1.05);
 }
 
-.gallery-grid figure:hover {
+.gallery figure:hover {
     transform: translateY(-4px);
     border-color: var(--color2);
     background: #020617;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
 }
 
-.gallery-grid figcaption {
+.gallery figcaption {
     padding: 0.75rem 1rem 1rem;
     font-size: 0.95rem;
     color: var(--color6); /* dark text */
@@ -301,7 +303,7 @@ figcaption {
     transition: background 200ms ease, color 200ms ease;
 }
 
-.gallery-grid figure:hover figcaption {
+.gallery figure:hover figcaption {
     color: #f8fafc; /* white text */
     background: rgba(15, 23, 42, 0.75); /* dark navy/black overlay */
 }
