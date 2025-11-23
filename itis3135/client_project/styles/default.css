@@ -1,54 +1,56 @@
 :root {
-  /* Palette: dark charcoal + warm gold/orange + sky blue */
-  --color0: #020617; /* page background */
-  --color1: #facc15; /* primary accent (gold) */
-  --color2: #f97316; /* secondary accent / hover (orange, matches trailers) */
-  --color3: #1f2937; /* borders / lines */
-  --color4: #38bdf8; /* link blue */
-  --color5: #9ca3af; /* muted text */
-  --color6: #e5e7eb; /* main text */
-  --card-bg: #0b1120; /* surface cards */
+  --color0: #e5e7eb;  /* soft warm gray background */
+  --color1: #f59e0b;  /* warm amber */
+  --color2: #ea580c;  /* warm orange/red */
+  --color3: #d1d5db;  /* light borders */
+  --color4: #2563eb;  /* blue links */
+  --color5: #6b7280;  /* muted text */
+  --color6: #111827;  /* main text */
+  --header-bg: #0f172a;
+  --footer-bg: #0b1120;
+  --card-bg: #ffffff;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   background: var(--color0);
   color: var(--color6);
-  font-family: 'Lato', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont,
-    'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Lato', 'Segoe UI', system-ui, Arial, sans-serif;
   line-height: 1.6;
 }
 
-/* ------------------ LAYOUT ------------------ */
-
-body > header,
-body > footer {
-  background: #020617;
-  border-color: var(--color3);
+/* Header/footer bands use the new background vars */
+header,
+.site-header {
+  background: var(--header-bg);
+  color: #e5e7eb;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.7);
 }
 
+footer,
+.site-footer {
+  background: var(--footer-bg);
+  color: var(--color5);
+  border-top: 1px solid rgba(15, 23, 42, 0.7);
+}
+
+/* Main content sits on light background */
 main {
   max-width: 1040px;
   margin: 1.75rem auto 2.5rem;
   padding: 0 1.25rem;
 }
 
-section + section {
-  margin-top: 2.5rem;
-}
-
-/* Optional: generic section card wrapper if you use it later */
-.section-card {
+/* Cards (like gallery figures, form fieldsets) */
+.section-card,
+fieldset,
+.gallery-grid figure {
   background: var(--card-bg);
-  border-radius: 0.9rem;
-  border: 1px solid var(--color3);
-  padding: 1.5rem 1.75rem;
 }
 
 /* ------------------ HEADER / NAV ------------------ */
@@ -89,7 +91,7 @@ header,
 }
 
 .nav-list a {
-  color: var(--color6);
+  color: #f1f5f9;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .07em;
@@ -122,7 +124,7 @@ header,
 
 /* Separator spacing (you already have <span class="sep">) */
 .sep {
-  color: var(--color5);
+  color: var(--color3);
   font-weight: 300;
   opacity: .7;
   padding: 0 .25rem;
