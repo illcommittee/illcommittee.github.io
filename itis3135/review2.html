@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Review 2 Johnson, Gabriel</title>
+        <link rel="stylesheet" href="styles/default.css">
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <main id="main-content" class="peer-review">
+            <h2>Peer Review 2 - Johnson, Gabriel</h2>
+
+            <section class="review-site">
+                <h3>Johnson, Gabriel</h3>
+                <figure class="review-screenshot">
+                    <!-- update filename to whatever you actually save -->
+                    <img src="images/reducedssr2.png"
+                    alt="Reduced screenshot of Gabriel Johnson's Bible Study client project site">
+                    <figcaption>
+                        <a href="https://webpages.charlotte.edu/gjohns80/itis3135/project/" target="_blank">
+                            Bible Study - Client Project
+                        </a>
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <h3>A Checklist for Each Page (from the top)</h3>
+
+                <ol>
+                    <li>
+                        Your submission leads right to the page to be reviewed
+                        <ul>
+                            <li>The project link goes to the Bible Study home page, which then links to About, Course Summary, Schedule, and Contact.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        There are no spaces or upper-cases in the file/folder names
+                        <ul>
+                            <li>Project files such as <code>about.html</code>, <code>course.html</code>, <code>schedule.html</code>, and <code>contact.html</code> are all lowercase with no spaces inside the <code>project</code> folder.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Design
+                        <ol type="a">
+                            <li>
+                                Page has sufficient contrast / font sizing
+                                <ul>
+                                    <li>Body text is generally readable and headings stand out. It would still be worth running a contrast checker to be sure everything meets accessibility guidelines.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Page has site colors and fonts using the standard CSS file
+                                <ul>
+                                    <li>The Bible Study section has a consistent color theme and typography across all four main pages.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                CRAP
+                                <ol type="i">
+                                    <li>Contrast - headings and navigation are visually prominent, which helps orientation.</li>
+                                    <li>Repetition - the Bible Study navigation and page layout repeat from page to page, which is good.</li>
+                                    <li>Alignment - content blocks are aligned in a simple, centered layout that reads cleanly.</li>
+                                    <li>Proximity - related information (modules, readings, contact info) is grouped in logical sections.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li>
+                        Page has within it:
+                        <ol type="a">
+                            <li>Header</li>
+                            <li>Main</li>
+                            <li>Footer</li>
+                            <li>(optional) nav for main menu between header and main</li>
+                        </ol>
+                        <ul>
+                            <li>The Bible Study pages have a clear title, navigation bar, main content, and footer.</li>
+                            <li>It would be helpful to make sure semantic tags like <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> are used consistently in the HTML.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Header has site/brand header with text in an <code>h1</code>
+                        <ol type="a">
+                            <li>If this is a branded page it should be the brand/company.</li>
+                            <li>DO NOT include the page name in the header.</li>
+                            <li>Understand the difference between head, header, and heading.</li>
+                        </ol>
+                        <ul>
+                            <li>For the client portion, “BibleStudy” works well as a simple brand heading with its own navigation beneath it.</li>
+                            <li>Right now, the very top of the page still shows “Gabriel Johnson’s Gallant Jaguar || ITIS 3135” and a long course navigation. For a client site, it would be better if the client brand were the primary header and the student/course header were either removed, moved to a separate course page, or made much smaller so it does not feel like the client’s site is sitting inside the student’s personal site.</li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        Main starts with name of page as an <code>h2</code> and does not include name of site/brand
+                        <ul>
+                            <li>The Bible Study pages use headings like “Welcome to the Bible Study Program”, “About This Project”, “Course Summary”, and “Study Schedule & Checklist”. These clearly describe each page.</li>
+                            <li>It would be good to confirm these headings are implemented as <code>h2</code> elements within <code>&lt;main&gt;</code>, with the site name reserved for the <code>h1</code>.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Page has brand tagline somewhere (consistent on every page)
+                        <ul>
+                            <li>The copy explains the purpose of the course (“guided reading of the New Testament”, “structured, gentle approach”).</li>
+                            <li>Adding a short, repeatable tagline near the Bible Study logo (for example, “Guided New Testament reading for groups and individuals”) would make the branding stronger and more consistent across pages.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Page has footer with
+                        <ol type="a">
+                            <li>Menu for user’s pages</li>
+                            <li>HTML validation button/link and validates</li>
+                            <li>CSS validation button/link and validates</li>
+                        </ol>
+                        <ul>
+                            <li>There is a simple footer on the pages, but it does not yet include a footer navigation menu.</li>
+                            <li>I did not see HTML or CSS validation links/buttons. Those still need to be added and connected to the correct validator URLs once the pages validate.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Page has specific requirements for this assignment
+                        <ul>
+                            <li>The Bible Study concept is clear: a guided, trackable course study of the New Testament with modules and a schedule.</li>
+                            <li>The Course Summary page outlines three modules (Gospels, Acts & Early Church, Letters and Revelation) and gives a clear idea of what the course covers.</li>
+                            <li>The Schedule page describes a checklist of readings and mentions that progress is saved locally in the browser, which fits well with the “trackable” requirement.</li>
+                            <li>The About page includes basic client information for Luke Travers but could be expanded a bit more with goals, audience, and any constraints the client has for design/functionality.</li>
+                            <li>The Contact page gives an email and a simple slideshow area; adding short labels or captions for the images would make that section feel more intentional.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>Additional Notes (Stop / Start / Continue)</h3>
+                <p><strong>Stop:</strong> relying on the main ITIS 3135 header and long personal navigation on the client pages. It makes the Bible Study site feel secondary to your course site.</p>
+                <p><strong>Start:</strong> letting the Bible Study branding stand alone at the top of the client pages, adding a concise tagline, and building out the Schedule checklist and Contact slideshow with a bit more detail and labeling.</p>
+                <p><strong>Continue:</strong> keeping the content focused and readable, using clear headings, and tying each page directly to the client’s goal of a structured New Testament study.</p>
+            </section>
+        </main>
+    </body>
+</html>
