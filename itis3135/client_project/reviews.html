@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/default.css">
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     <script src="scripts/HTMLInclude.min.js" defer></script>
+    <script src="scripts/reviews.js" defer></script>
     <link rel="icon" type="image/x-icon" href="images/transparent_favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="images/transparent_favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/transparent_favicon-16x16.png">
@@ -19,7 +20,7 @@
     
     <main>
       <section id="reviews-intro">
-        <h1>Customer Reviews & Partner Feedback</h1>
+        <h1>Customer Reviews &amp; Partner Feedback</h1>
         <p>
           We treat every delivery, move, and install as an opportunity to earn
           another 5-star review. Here is a sample of the feedback Deliverr
@@ -27,12 +28,81 @@
         </p>
       </section>
 
+      <!-- DYNAMIC HIGHLIGHT + ADD REVIEW INTERACTIVITY -->
+      <section id="reviews-dynamic">
+        <h2>Highlighted Reviews</h2>
+
+        <div id="reviewHighlight" class="testimonial testimonial-highlight" aria-live="polite">
+          <!-- JavaScript injects current highlighted review here -->
+        </div>
+
+        <div class="review-slider-controls">
+          <button type="button" id="prevReview">Previous</button>
+          <button type="button" id="nextReview">Next</button>
+          <p class="small" id="reviewCounter"></p>
+        </div>
+
+        <section id="add-review">
+          <h2>Share Your Experience</h2>
+
+          <form id="reviewForm" novalidate>
+            <fieldset>
+              <legend>Your Review</legend>
+
+              <label>
+                Name*
+                <input type="text" name="name" required>
+              </label>
+
+              <label>
+                Location (City, ST)
+                <input type="text" name="location">
+              </label>
+
+              <label>
+                Job Type*
+                <select name="jobType" required>
+                  <option value="">Select…</option>
+                  <option>Residential Move</option>
+                  <option>Final Mile Delivery</option>
+                  <option>Hot Shot Freight</option>
+                  <option>Driver-for-Hire</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <label>
+                Rating (1–5)*
+                <input type="number" name="rating" min="1" max="5" required>
+              </label>
+
+              <label>
+                Your Comments*
+                <textarea name="comments" rows="4" required></textarea>
+              </label>
+            </fieldset>
+
+            <div class="form-actions">
+              <button type="submit">Submit Review</button>
+              <button type="reset">Reset</button>
+              <span id="reviewFormStatus" aria-live="polite"></span>
+            </div>
+          </form>
+
+          <div id="recentReviews" class="recent-reviews">
+            <h3>Recent Customer Reviews</h3>
+          <!-- New reviews will be inserted here by JavaScript -->
+          </div>
+        </section>
+      </section>
+      <!-- END DYNAMIC INTERACTIVITY SECTION -->
+
       <section id="featured-partner-review">
         <h2>Featured Builder Feedback</h2>
 
         <article class="testimonial">
           <header>
-            <h3>Parkside Crossing Jobsite - Final Mile Installation</h3>
+            <h3 class="testimonial-title">Parkside Crossing Jobsite - Final Mile Installation</h3>
             <p class="meta">
               Partner: Regional home solutions provider • Date: November 7
             </p>
@@ -59,7 +129,7 @@
 
         <article class="testimonial">
           <header>
-            <h3>On-Time Appliance Delivery</h3>
+            <h3 class="testimonial-title">On-Time Appliance Delivery</h3>
             <p class="meta">Residential client - Charlotte, NC</p>
           </header>
           <blockquote>
@@ -69,12 +139,13 @@
               made sure the floors and walls were protected. Super respectful
               and professional.”
             </p>
+      
           </blockquote>
         </article>
 
         <article class="testimonial">
           <header>
-            <h3>Smooth Local Move</h3>
+            <h3 class="testimonial-title">Smooth Local Move</h3>
             <p class="meta">Apartment move - University area</p>
           </header>
           <blockquote>
@@ -88,25 +159,26 @@
       </section>
 
       <section id="business-reviews">
-        <h2>Partner & Broker Feedback</h2>
+        <h2>Partner &amp; Broker Feedback</h2>
 
         <article class="testimonial">
           <header>
-            <h3>Reliable Final Mile Partner</h3>
+            <h3 class="testimonial-title">Reliable Final Mile Partner</h3>
             <p class="meta">Logistics coordinator - Charlotte, NC</p>
+      
           </header>
           <blockquote>
             <p>
               “We use Deliverr Trucking for final mile deliveries on new build
-              communities. They follow instructions, respect our customers’
-              homes, and keep us updated if anything on site changes.”
+              communities. They follow instructions, respect our customers’ homes,
+              and keep us updated if anything on site changes.”
             </p>
           </blockquote>
         </article>
 
         <article class="testimonial">
           <header>
-            <h3>Hot Shot Freight Success</h3>
+            <h3 class="testimonial-title">Hot Shot Freight Success</h3>
             <p class="meta">Manufacturing client - Regional route</p>
           </header>
           <blockquote>
@@ -131,9 +203,10 @@
         </p>
       </section>
     </main>
-
+    
     <footer>
       <div data-include="components/footer.html"></div>
     </footer>
+  
   </body>
 </html>
