@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const destination = getTrimmed("destination") || "Destination";
         const serviceType = formData.get("equipment") || "";
         const weight = Number(formData.get("weight")) || 0;
-        const pickupDate = formData.get("pickupDate"); // can be null, that's fine
+        const pickupDate = formData.get("pickupDate");
         const commodity = getTrimmed("commodity");
         const notes = getTrimmed("notes");
 
