@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sliderMeta += today;
 
         highlightReviews.push({
-            title: name ? name + " – New Review" : "New Customer Review",
+            title: name ? name + " - New Review" : "New Customer Review",
             meta: sliderMeta,
             rating: rating > 0 ? rating : 5,
             text: comments
